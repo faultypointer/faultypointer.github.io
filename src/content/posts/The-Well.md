@@ -3,7 +3,7 @@ title: The Well
 published: 2024-06-27
 description: ''
 image: ''
-tags: ['horror', 'story']
+tags: ['horror', 'story', '30 days challenge']
 category: 'writing'
 draft: false 
 ---

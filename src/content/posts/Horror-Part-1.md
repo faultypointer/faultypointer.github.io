@@ -3,7 +3,7 @@ title: Horror Part 1
 published: 2024-06-27
 description: 'Horror and Me'
 image: ''
-tags: ['horror', 'just a little bit faulty', 'rant']
+tags: ['horror', 'just a little bit faulty', 'rant', '30 days challenge']
 category: 'writing'
 draft: false 
 ---

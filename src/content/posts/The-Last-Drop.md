@@ -3,7 +3,7 @@ title: The Last Drop
 published: 2024-06-27
 description: ''
 image: ''
-tags: ['poem', 'wtf']
+tags: ['poem', 'wtf', '30 days challenge']
 category: 'writing'
 draft: false 
 ---

@@ -3,7 +3,7 @@ title: First 30 Days Challenge
 published: 2024-06-27
 description: 'Challenging myself to write something every single day for the next 30 days'
 image: ''
-tags: ["intro"]
+tags: ["intro", '30 days challenge']
 category: 'writing'
 draft: false 
 ---

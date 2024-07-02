@@ -3,7 +3,7 @@ title: Infohazard
 published: 2024-06-30
 description: ''
 image: ''
-tags: ['infohazard']
+tags: ['infohazard', '30 days challenge']
 category: 'writing'
 draft: false 
 ---

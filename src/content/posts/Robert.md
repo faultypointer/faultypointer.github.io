@@ -3,7 +3,7 @@ title: Robert, The Detective part 1
 published: 2024-06-29
 description: ''
 image: ''
-tags: ['short-story']
+tags: ['short-story', '30 days challenge']
 category: 'writing'
 draft: false 
 ---
