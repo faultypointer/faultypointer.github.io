@@ -10,4 +10,4 @@ Currently a computer engineerning student.
 I like Programming langages, systems development, algorithms and a lot more stuff related to
 programming and computation. I also like writing about various things.
 
-I also like to read books and mangas in my free time.
+In my free time, I read manga, webnovels, books and occationally watch anime.
