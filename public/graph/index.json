@@ -1,0 +1,15 @@
+{
+  "graph": {
+    "/posts/yet-another-blog/": {
+      "in": [],
+      "out": []
+    }
+  },
+  "pages": {
+    "/posts/yet-another-blog/": {
+      "permalink": "/posts/yet-another-blog/",
+      "section": "posts",
+      "title": "Yet Another Blog Site"
+    }
+  }
+}
