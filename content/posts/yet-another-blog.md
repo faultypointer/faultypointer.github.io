@@ -3,6 +3,7 @@ author = "faultypointer"
 title = "Yet Another Blog Site"
 date = "2024-11-29"
 description = "Started yet another blog site; this time using hugo"
+mastodon_id = "113563792102009948"
 tags = [
     "blog",
 ]
