@@ -1,11 +1,74 @@
 {
   "graph": {
+    "/notes/projects/booklog/booklog/": {
+      "in": [],
+      "out": []
+    },
+    "/notes/projects/booklog/scratchpad/": {
+      "in": [],
+      "out": []
+    },
+    "/notes/projects/pngme/pngme/": {
+      "in": [],
+      "out": []
+    },
+    "/notes/projects/tonica/tonica/": {
+      "in": [],
+      "out": []
+    },
+    "/notes/projects/zhip8/zhip8/": {
+      "in": [],
+      "out": []
+    },
+    "/notes/todos/ril/": {
+      "in": [],
+      "out": []
+    },
+    "/notes/todos/wil/": {
+      "in": [],
+      "out": []
+    },
     "/posts/yet-another-blog/": {
       "in": [],
       "out": []
     }
   },
   "pages": {
+    "/notes/projects/booklog/booklog/": {
+      "permalink": "/notes/projects/booklog/booklog/",
+      "section": "notes",
+      "title": "BookLog"
+    },
+    "/notes/projects/booklog/scratchpad/": {
+      "permalink": "/notes/projects/booklog/scratchpad/",
+      "section": "notes",
+      "title": "BookLog Scratchpad"
+    },
+    "/notes/projects/pngme/pngme/": {
+      "permalink": "/notes/projects/pngme/pngme/",
+      "section": "notes",
+      "title": "PngMe"
+    },
+    "/notes/projects/tonica/tonica/": {
+      "permalink": "/notes/projects/tonica/tonica/",
+      "section": "notes",
+      "title": "TONICA"
+    },
+    "/notes/projects/zhip8/zhip8/": {
+      "permalink": "/notes/projects/zhip8/zhip8/",
+      "section": "notes",
+      "title": "Zhip-8"
+    },
+    "/notes/todos/ril/": {
+      "permalink": "/notes/todos/ril/",
+      "section": "notes",
+      "title": "Read It Later"
+    },
+    "/notes/todos/wil/": {
+      "permalink": "/notes/todos/wil/",
+      "section": "notes",
+      "title": "Watch It Later"
+    },
     "/posts/yet-another-blog/": {
       "permalink": "/posts/yet-another-blog/",
       "section": "posts",
