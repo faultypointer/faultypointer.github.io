@@ -2,83 +2,83 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on faultypointer</title>
-    <link>https://faultypointer.github.io/tags/</link>
+    <link>http://localhost:1313/tags/</link>
     <description>Recent content in Tags on faultypointer</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <managingEditor>faultypointer@proton.me (faultypointer)</managingEditor>
     <webMaster>faultypointer@proton.me (faultypointer)</webMaster>
     <copyright>faultypointer</copyright>
-    <lastBuildDate>Fri, 29 Nov 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://faultypointer.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 15 Dec 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Programming</title>
+      <link>http://localhost:1313/tags/programming/</link>
+      <pubDate>Sun, 15 Dec 2024 00:00:00 +0000</pubDate><author>faultypointer@proton.me (faultypointer)</author>
+      <guid>http://localhost:1313/tags/programming/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Blog</title>
-      <link>https://faultypointer.github.io/tags/blog/</link>
+      <link>http://localhost:1313/tags/blog/</link>
       <pubDate>Fri, 29 Nov 2024 00:00:00 +0000</pubDate><author>faultypointer@proton.me (faultypointer)</author>
-      <guid>https://faultypointer.github.io/tags/blog/</guid>
+      <guid>http://localhost:1313/tags/blog/</guid>
       <description></description>
     </item>
     <item>
       <title>BookLog</title>
-      <link>https://faultypointer.github.io/tags/booklog/</link>
+      <link>http://localhost:1313/tags/booklog/</link>
       <pubDate>Fri, 29 Nov 2024 00:00:00 +0000</pubDate><author>faultypointer@proton.me (faultypointer)</author>
-      <guid>https://faultypointer.github.io/tags/booklog/</guid>
+      <guid>http://localhost:1313/tags/booklog/</guid>
       <description></description>
     </item>
     <item>
       <title>Chess</title>
-      <link>https://faultypointer.github.io/tags/chess/</link>
+      <link>http://localhost:1313/tags/chess/</link>
       <pubDate>Fri, 29 Nov 2024 00:00:00 +0000</pubDate><author>faultypointer@proton.me (faultypointer)</author>
-      <guid>https://faultypointer.github.io/tags/chess/</guid>
+      <guid>http://localhost:1313/tags/chess/</guid>
       <description></description>
     </item>
     <item>
       <title>Chip8</title>
-      <link>https://faultypointer.github.io/tags/chip8/</link>
+      <link>http://localhost:1313/tags/chip8/</link>
       <pubDate>Fri, 29 Nov 2024 00:00:00 +0000</pubDate><author>faultypointer@proton.me (faultypointer)</author>
-      <guid>https://faultypointer.github.io/tags/chip8/</guid>
+      <guid>http://localhost:1313/tags/chip8/</guid>
       <description></description>
     </item>
     <item>
       <title>PngMe</title>
-      <link>https://faultypointer.github.io/tags/pngme/</link>
+      <link>http://localhost:1313/tags/pngme/</link>
       <pubDate>Fri, 29 Nov 2024 00:00:00 +0000</pubDate><author>faultypointer@proton.me (faultypointer)</author>
-      <guid>https://faultypointer.github.io/tags/pngme/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Programming</title>
-      <link>https://faultypointer.github.io/tags/programming/</link>
-      <pubDate>Fri, 29 Nov 2024 00:00:00 +0000</pubDate><author>faultypointer@proton.me (faultypointer)</author>
-      <guid>https://faultypointer.github.io/tags/programming/</guid>
+      <guid>http://localhost:1313/tags/pngme/</guid>
       <description></description>
     </item>
     <item>
       <title>Read</title>
-      <link>https://faultypointer.github.io/tags/read/</link>
+      <link>http://localhost:1313/tags/read/</link>
       <pubDate>Fri, 29 Nov 2024 00:00:00 +0000</pubDate><author>faultypointer@proton.me (faultypointer)</author>
-      <guid>https://faultypointer.github.io/tags/read/</guid>
+      <guid>http://localhost:1313/tags/read/</guid>
       <description></description>
     </item>
     <item>
       <title>Rust</title>
-      <link>https://faultypointer.github.io/tags/rust/</link>
+      <link>http://localhost:1313/tags/rust/</link>
       <pubDate>Fri, 29 Nov 2024 00:00:00 +0000</pubDate><author>faultypointer@proton.me (faultypointer)</author>
-      <guid>https://faultypointer.github.io/tags/rust/</guid>
+      <guid>http://localhost:1313/tags/rust/</guid>
       <description></description>
     </item>
     <item>
       <title>Tonica</title>
-      <link>https://faultypointer.github.io/tags/tonica/</link>
+      <link>http://localhost:1313/tags/tonica/</link>
       <pubDate>Fri, 29 Nov 2024 00:00:00 +0000</pubDate><author>faultypointer@proton.me (faultypointer)</author>
-      <guid>https://faultypointer.github.io/tags/tonica/</guid>
+      <guid>http://localhost:1313/tags/tonica/</guid>
       <description></description>
     </item>
     <item>
       <title>Zig</title>
-      <link>https://faultypointer.github.io/tags/zig/</link>
+      <link>http://localhost:1313/tags/zig/</link>
       <pubDate>Fri, 29 Nov 2024 00:00:00 +0000</pubDate><author>faultypointer@proton.me (faultypointer)</author>
-      <guid>https://faultypointer.github.io/tags/zig/</guid>
+      <guid>http://localhost:1313/tags/zig/</guid>
       <description></description>
     </item>
   </channel>

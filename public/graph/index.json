@@ -20,13 +20,24 @@
       "in": [],
       "out": []
     },
+    "/notes/todos/done/tigerstyle/": {
+      "in": [
+        "/notes/todos/wil/"
+      ],
+      "out": []
+    },
     "/notes/todos/ril/": {
       "in": [],
       "out": []
     },
     "/notes/todos/wil/": {
       "in": [],
-      "out": []
+      "out": [
+        "/notes/todos/done/tigerstyle/",
+        "/notes/todos/done/tigerstyle/",
+        "/notes/todos/done/tigerstyle/",
+        "/notes/todos/done/tigerstyle/"
+      ]
     },
     "/posts/yet-another-blog/": {
       "in": [],
@@ -58,6 +69,11 @@
       "permalink": "/notes/projects/zhip8/zhip8/",
       "section": "notes",
       "title": "Zhip-8"
+    },
+    "/notes/todos/done/tigerstyle/": {
+      "permalink": "/notes/todos/done/tigerstyle/",
+      "section": "notes",
+      "title": "TigerStyle"
     },
     "/notes/todos/ril/": {
       "permalink": "/notes/todos/ril/",

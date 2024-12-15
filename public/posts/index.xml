@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on faultypointer</title>
-    <link>https://faultypointer.github.io/posts/</link>
+    <link>http://localhost:1313/posts/</link>
     <description>Recent content in Posts on faultypointer</description>
     <generator>Hugo</generator>
     <language>en-us</language>
@@ -10,12 +10,12 @@
     <webMaster>faultypointer@proton.me (faultypointer)</webMaster>
     <copyright>faultypointer</copyright>
     <lastBuildDate>Fri, 29 Nov 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://faultypointer.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Yet Another Blog Site</title>
-      <link>https://faultypointer.github.io/posts/yet-another-blog/</link>
+      <link>http://localhost:1313/posts/yet-another-blog/</link>
       <pubDate>Fri, 29 Nov 2024 00:00:00 +0000</pubDate><author>faultypointer@proton.me (faultypointer)</author>
-      <guid>https://faultypointer.github.io/posts/yet-another-blog/</guid>
+      <guid>http://localhost:1313/posts/yet-another-blog/</guid>
       <description>&lt;p&gt;To whom it may convern&lt;/p&gt;&#xA;&lt;p&gt;I have started yet another bloging site and as with tradition, its a different static site&#xA;generator (hugo).&lt;/p&gt;&#xA;&lt;p&gt;Well that was it.&lt;/p&gt;</description>
     </item>
   </channel>

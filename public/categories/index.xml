@@ -2,41 +2,48 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on faultypointer</title>
-    <link>https://faultypointer.github.io/categories/</link>
+    <link>http://localhost:1313/categories/</link>
     <description>Recent content in Categories on faultypointer</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <managingEditor>faultypointer@proton.me (faultypointer)</managingEditor>
     <webMaster>faultypointer@proton.me (faultypointer)</webMaster>
     <copyright>faultypointer</copyright>
-    <lastBuildDate>Fri, 29 Nov 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://faultypointer.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 15 Dec 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Done</title>
+      <link>http://localhost:1313/categories/done/</link>
+      <pubDate>Sun, 15 Dec 2024 00:00:00 +0000</pubDate><author>faultypointer@proton.me (faultypointer)</author>
+      <guid>http://localhost:1313/categories/done/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Project</title>
-      <link>https://faultypointer.github.io/categories/project/</link>
+      <link>http://localhost:1313/categories/project/</link>
       <pubDate>Fri, 29 Nov 2024 00:00:00 +0000</pubDate><author>faultypointer@proton.me (faultypointer)</author>
-      <guid>https://faultypointer.github.io/categories/project/</guid>
+      <guid>http://localhost:1313/categories/project/</guid>
       <description></description>
     </item>
     <item>
       <title>Project Ideas</title>
-      <link>https://faultypointer.github.io/categories/project-ideas/</link>
+      <link>http://localhost:1313/categories/project-ideas/</link>
       <pubDate>Fri, 29 Nov 2024 00:00:00 +0000</pubDate><author>faultypointer@proton.me (faultypointer)</author>
-      <guid>https://faultypointer.github.io/categories/project-ideas/</guid>
+      <guid>http://localhost:1313/categories/project-ideas/</guid>
       <description></description>
     </item>
     <item>
       <title>Todo</title>
-      <link>https://faultypointer.github.io/categories/todo/</link>
+      <link>http://localhost:1313/categories/todo/</link>
       <pubDate>Fri, 29 Nov 2024 00:00:00 +0000</pubDate><author>faultypointer@proton.me (faultypointer)</author>
-      <guid>https://faultypointer.github.io/categories/todo/</guid>
+      <guid>http://localhost:1313/categories/todo/</guid>
       <description></description>
     </item>
     <item>
       <title>Writing</title>
-      <link>https://faultypointer.github.io/categories/writing/</link>
+      <link>http://localhost:1313/categories/writing/</link>
       <pubDate>Fri, 29 Nov 2024 00:00:00 +0000</pubDate><author>faultypointer@proton.me (faultypointer)</author>
-      <guid>https://faultypointer.github.io/categories/writing/</guid>
+      <guid>http://localhost:1313/categories/writing/</guid>
       <description></description>
     </item>
   </channel>
