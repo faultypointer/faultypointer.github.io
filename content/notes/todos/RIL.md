@@ -24,3 +24,8 @@ categories = [
 ## Rust
 
 - [Understanding Serde](https://www.joshmcguigan.com/blog/understanding-serde/)
+
+## Django
+
+- [Understanding Django](https://www.mattlayman.com/understand-django/)
+- [Django from first principles](https://www.mostlypython.com/django-from-first-principles-2/)
