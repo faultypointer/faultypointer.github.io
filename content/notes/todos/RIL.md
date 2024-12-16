@@ -10,14 +10,12 @@ categories = [
     "Todo",
 ]
 +++
----
-
-id: RIL
-aliases: []
-tags: []
----
 
 # Programming
+
+## Essay
+
+- [In the Beginning was the Command Line](https://people.cs.georgetown.edu/~clay/classes/spring2010/os/inthebeginning.pdf)
 
 ## C/C++
 
