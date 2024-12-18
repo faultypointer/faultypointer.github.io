@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>PngMe on faultypointer</title>
-    <link>http://localhost:1313/tags/pngme/</link>
+    <link>https://faultypointer.github.io/tags/pngme/</link>
     <description>Recent content in PngMe on faultypointer</description>
     <generator>Hugo</generator>
     <language>en-us</language>
@@ -10,12 +10,12 @@
     <webMaster>faultypointer@proton.me (faultypointer)</webMaster>
     <copyright>faultypointer</copyright>
     <lastBuildDate>Fri, 29 Nov 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/pngme/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://faultypointer.github.io/tags/pngme/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>PngMe</title>
-      <link>http://localhost:1313/notes/projects/pngme/pngme/</link>
+      <link>https://faultypointer.github.io/notes/projects/pngme/pngme/</link>
       <pubDate>Fri, 29 Nov 2024 00:00:00 +0000</pubDate><author>faultypointer@proton.me (faultypointer)</author>
-      <guid>http://localhost:1313/notes/projects/pngme/pngme/</guid>
+      <guid>https://faultypointer.github.io/notes/projects/pngme/pngme/</guid>
       <description>&lt;p&gt;A program that encodes a message into a png image. (also decodes)&lt;/p&gt;&#xA;&lt;h3 id=&#34;png-specification&#34; class=&#34;scroll-mt-8 group&#34;&gt;&#xA;  PNG Specification&#xA;  &#xA;    &lt;a href=&#34;#png-specification&#34;&#xA;        class=&#34;no-underline hidden opacity-50 hover:opacity-100 !text-inherit group-hover:inline-block&#34;&#xA;        aria-hidden=&#34;true&#34; title=&#34;Link to this heading&#34; tabindex=&#34;-1&#34;&gt;&#xA;        &lt;svg&#xA;  xmlns=&#34;http://www.w3.org/2000/svg&#34;&#xA;  width=&#34;16&#34;&#xA;  height=&#34;16&#34;&#xA;  fill=&#34;none&#34;&#xA;  stroke=&#34;currentColor&#34;&#xA;  stroke-linecap=&#34;round&#34;&#xA;  stroke-linejoin=&#34;round&#34;&#xA;  stroke-width=&#34;2&#34;&#xA;  class=&#34;lucide lucide-link w-4 h-4 block&#34;&#xA;  viewBox=&#34;0 0 24 24&#34;&#xA;&gt;&#xA;  &lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; /&gt;&#xA;  &lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; /&gt;&#xA;&lt;/svg&gt;&#xA;&#xA;    &lt;/a&gt;&#xA;  &#xA;&lt;/h3&gt;&#xA;&lt;h4 id=&#34;chunk-types&#34; class=&#34;scroll-mt-8 group&#34;&gt;&#xA;  Chunk Types&#xA;  &#xA;    &lt;a href=&#34;#chunk-types&#34;&#xA;        class=&#34;no-underline hidden opacity-50 hover:opacity-100 !text-inherit group-hover:inline-block&#34;&#xA;        aria-hidden=&#34;true&#34; title=&#34;Link to this heading&#34; tabindex=&#34;-1&#34;&gt;&#xA;        &lt;svg&#xA;  xmlns=&#34;http://www.w3.org/2000/svg&#34;&#xA;  width=&#34;16&#34;&#xA;  height=&#34;16&#34;&#xA;  fill=&#34;none&#34;&#xA;  stroke=&#34;currentColor&#34;&#xA;  stroke-linecap=&#34;round&#34;&#xA;  stroke-linejoin=&#34;round&#34;&#xA;  stroke-width=&#34;2&#34;&#xA;  class=&#34;lucide lucide-link w-4 h-4 block&#34;&#xA;  viewBox=&#34;0 0 24 24&#34;&#xA;&gt;&#xA;  &lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; /&gt;&#xA;  &lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; /&gt;&#xA;&lt;/svg&gt;&#xA;&#xA;    &lt;/a&gt;&#xA;  &#xA;&lt;/h4&gt;&#xA;&lt;p&gt;Chunk type codes are assigned so that a decoder can determine some properties of a chunk even when it does not recognize the type code. These rules are intended to allow safe, flexible extension of the PNG format, by allowing a decoder to decide what to do when it encounters an unknown chunk. The naming rules are not normally of interest when the decoder does recognize the chunk&amp;rsquo;s type.&lt;/p&gt;</description>
     </item>
   </channel>

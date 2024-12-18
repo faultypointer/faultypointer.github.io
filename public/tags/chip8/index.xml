@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Chip8 on faultypointer</title>
-    <link>http://localhost:1313/tags/chip8/</link>
+    <link>https://faultypointer.github.io/tags/chip8/</link>
     <description>Recent content in Chip8 on faultypointer</description>
     <generator>Hugo</generator>
     <language>en-us</language>
@@ -10,12 +10,12 @@
     <webMaster>faultypointer@proton.me (faultypointer)</webMaster>
     <copyright>faultypointer</copyright>
     <lastBuildDate>Fri, 29 Nov 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/chip8/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://faultypointer.github.io/tags/chip8/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Zhip-8</title>
-      <link>http://localhost:1313/notes/projects/zhip8/zhip8/</link>
+      <link>https://faultypointer.github.io/notes/projects/zhip8/zhip8/</link>
       <pubDate>Fri, 29 Nov 2024 00:00:00 +0000</pubDate><author>faultypointer@proton.me (faultypointer)</author>
-      <guid>http://localhost:1313/notes/projects/zhip8/zhip8/</guid>
+      <guid>https://faultypointer.github.io/notes/projects/zhip8/zhip8/</guid>
       <description>&lt;p&gt;Chip-8 emulator in zig&lt;/p&gt;&#xA;&lt;h3 id=&#34;what-is-chip8&#34; class=&#34;scroll-mt-8 group&#34;&gt;&#xA;  What is chip8?&#xA;  &#xA;    &lt;a href=&#34;#what-is-chip8&#34;&#xA;        class=&#34;no-underline hidden opacity-50 hover:opacity-100 !text-inherit group-hover:inline-block&#34;&#xA;        aria-hidden=&#34;true&#34; title=&#34;Link to this heading&#34; tabindex=&#34;-1&#34;&gt;&#xA;        &lt;svg&#xA;  xmlns=&#34;http://www.w3.org/2000/svg&#34;&#xA;  width=&#34;16&#34;&#xA;  height=&#34;16&#34;&#xA;  fill=&#34;none&#34;&#xA;  stroke=&#34;currentColor&#34;&#xA;  stroke-linecap=&#34;round&#34;&#xA;  stroke-linejoin=&#34;round&#34;&#xA;  stroke-width=&#34;2&#34;&#xA;  class=&#34;lucide lucide-link w-4 h-4 block&#34;&#xA;  viewBox=&#34;0 0 24 24&#34;&#xA;&gt;&#xA;  &lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; /&gt;&#xA;  &lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; /&gt;&#xA;&lt;/svg&gt;&#xA;&#xA;    &lt;/a&gt;&#xA;  &#xA;&lt;/h3&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Chip-8 is a simple, interpreted, programming language which was first used on some do-it-yourself computer systems in the late 1970s and early 1980s. The COSMAC VIP, DREAM 6800, and ETI 660 computers are a few examples. These computers typically were designed to use a television as a display, had between 1 and 4K of RAM, and used a 16-key hexadecimal keypad for input. The interpreter took up only 512 bytes of memory, and programs, which were entered into the computer in hexadecimal, were even smaller.&lt;/p&gt;</description>
     </item>
   </channel>

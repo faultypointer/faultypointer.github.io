@@ -2,99 +2,93 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>https://faultypointer.github.io/categories/</loc>
     <lastmod>2024-12-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/done/</loc>
+    <loc>https://faultypointer.github.io/categories/done/</loc>
     <lastmod>2024-12-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/notes/</loc>
+    <loc>https://faultypointer.github.io/notes/</loc>
     <lastmod>2024-12-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/programming/</loc>
+    <loc>https://faultypointer.github.io/tags/programming/</loc>
     <lastmod>2024-12-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>https://faultypointer.github.io/tags/</loc>
     <lastmod>2024-12-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/notes/todos/done/tigerstyle/</loc>
+    <loc>https://faultypointer.github.io/notes/todos/done/tigerstyle/</loc>
     <lastmod>2024-12-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/blog/</loc>
+    <loc>https://faultypointer.github.io/tags/blog/</loc>
     <lastmod>2024-11-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/booklog/</loc>
+    <loc>https://faultypointer.github.io/tags/booklog/</loc>
     <lastmod>2024-11-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/notes/projects/booklog/booklog/</loc>
+    <loc>https://faultypointer.github.io/notes/projects/booklog/booklog/</loc>
     <lastmod>2024-11-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/notes/projects/booklog/scratchpad/</loc>
+    <loc>https://faultypointer.github.io/notes/projects/booklog/scratchpad/</loc>
     <lastmod>2024-11-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/chess/</loc>
+    <loc>https://faultypointer.github.io/tags/chess/</loc>
     <lastmod>2024-11-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/chip8/</loc>
+    <loc>https://faultypointer.github.io/tags/chip8/</loc>
     <lastmod>2024-11-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/litjour/</loc>
+    <loc>https://faultypointer.github.io/tags/pngme/</loc>
     <lastmod>2024-11-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/notes/projects/litjour/litjour/</loc>
+    <loc>https://faultypointer.github.io/notes/projects/pngme/pngme/</loc>
     <lastmod>2024-11-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/pngme/</loc>
+    <loc>https://faultypointer.github.io/posts/</loc>
     <lastmod>2024-11-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/notes/projects/pngme/pngme/</loc>
+    <loc>https://faultypointer.github.io/categories/project/</loc>
     <lastmod>2024-11-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/</loc>
+    <loc>https://faultypointer.github.io/categories/project-ideas/</loc>
     <lastmod>2024-11-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/project/</loc>
+    <loc>https://faultypointer.github.io/tags/read/</loc>
     <lastmod>2024-11-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/project-ideas/</loc>
+    <loc>https://faultypointer.github.io/notes/todos/ril/</loc>
     <lastmod>2024-11-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/read/</loc>
+    <loc>https://faultypointer.github.io/tags/rust/</loc>
     <lastmod>2024-11-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/notes/todos/ril/</loc>
+    <loc>https://faultypointer.github.io/categories/todo/</loc>
     <lastmod>2024-11-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/rust/</loc>
+    <loc>https://faultypointer.github.io/tags/tonica/</loc>
     <lastmod>2024-11-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/todo/</loc>
+    <loc>https://faultypointer.github.io/notes/projects/tonica/tonica/</loc>
     <lastmod>2024-11-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/tonica/</loc>
+    <loc>https://faultypointer.github.io/notes/todos/wil/</loc>
     <lastmod>2024-11-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/notes/projects/tonica/tonica/</loc>
+    <loc>https://faultypointer.github.io/categories/writing/</loc>
     <lastmod>2024-11-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/notes/todos/wil/</loc>
+    <loc>https://faultypointer.github.io/posts/yet-another-blog/</loc>
     <lastmod>2024-11-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/writing/</loc>
+    <loc>https://faultypointer.github.io/notes/projects/zhip8/zhip8/</loc>
     <lastmod>2024-11-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/yet-another-blog/</loc>
+    <loc>https://faultypointer.github.io/tags/zig/</loc>
     <lastmod>2024-11-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/notes/projects/zhip8/zhip8/</loc>
-    <lastmod>2024-11-29T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/zig/</loc>
-    <lastmod>2024-11-29T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/</loc>
+    <loc>https://faultypointer.github.io/</loc>
     <lastmod>2024-10-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/graph/</loc>
+    <loc>https://faultypointer.github.io/graph/</loc>
   </url>
 </urlset>

@@ -8,10 +8,6 @@
       "in": [],
       "out": []
     },
-    "/notes/projects/litjour/litjour/": {
-      "in": [],
-      "out": []
-    },
     "/notes/projects/pngme/pngme/": {
       "in": [],
       "out": []
@@ -55,11 +51,6 @@
       "permalink": "/notes/projects/booklog/scratchpad/",
       "section": "notes",
       "title": "BookLog Scratchpad"
-    },
-    "/notes/projects/litjour/litjour/": {
-      "permalink": "/notes/projects/litjour/litjour/",
-      "section": "notes",
-      "title": "LitJour"
     },
     "/notes/projects/pngme/pngme/": {
       "permalink": "/notes/projects/pngme/pngme/",
