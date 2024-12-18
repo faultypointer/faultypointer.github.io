@@ -3,7 +3,6 @@ author = "faultypointer"
 title = "TigerStyle"
 date = "2024-12-15"
 description = "Notes from TigerStyle video"
-draft = true
 tags = [
     "programming",
 ]
