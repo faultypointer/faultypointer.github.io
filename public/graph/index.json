@@ -1,10 +1,41 @@
 {
   "graph": {
+    "/notes/projects/3o14/3o14/": {
+      "in": [],
+      "out": []
+    },
+    "/notes/projects/3o14/activitypub/": {
+      "in": [],
+      "out": [
+        "/notes/projects/3o14/activitystream/"
+      ]
+    },
+    "/notes/projects/3o14/activitystream/": {
+      "in": [
+        "/notes/projects/3o14/activitypub/",
+        "/notes/projects/3o14/activityvocab/"
+      ],
+      "out": [
+        "/notes/projects/3o14/activityvocab/"
+      ]
+    },
+    "/notes/projects/3o14/activityvocab/": {
+      "in": [
+        "/notes/projects/3o14/activitystream/"
+      ],
+      "out": [
+        "/notes/projects/3o14/activitystream/"
+      ]
+    },
     "/notes/projects/booklog/booklog/": {
       "in": [],
       "out": []
     },
     "/notes/projects/booklog/scratchpad/": {
+      "in": [],
+      "out": []
+    },
+    "/notes/projects/litjour/litjour/": {
       "in": [],
       "out": []
     },
@@ -42,6 +73,26 @@
     }
   },
   "pages": {
+    "/notes/projects/3o14/3o14/": {
+      "permalink": "/notes/projects/3o14/3o14/",
+      "section": "notes",
+      "title": "3o14"
+    },
+    "/notes/projects/3o14/activitypub/": {
+      "permalink": "/notes/projects/3o14/activitypub/",
+      "section": "notes",
+      "title": "ActivityPub"
+    },
+    "/notes/projects/3o14/activitystream/": {
+      "permalink": "/notes/projects/3o14/activitystream/",
+      "section": "notes",
+      "title": "ActivityStream"
+    },
+    "/notes/projects/3o14/activityvocab/": {
+      "permalink": "/notes/projects/3o14/activityvocab/",
+      "section": "notes",
+      "title": "Activity Vocabulary"
+    },
     "/notes/projects/booklog/booklog/": {
       "permalink": "/notes/projects/booklog/booklog/",
       "section": "notes",
@@ -51,6 +102,11 @@
       "permalink": "/notes/projects/booklog/scratchpad/",
       "section": "notes",
       "title": "BookLog Scratchpad"
+    },
+    "/notes/projects/litjour/litjour/": {
+      "permalink": "/notes/projects/litjour/litjour/",
+      "section": "notes",
+      "title": "LitJour"
     },
     "/notes/projects/pngme/pngme/": {
       "permalink": "/notes/projects/pngme/pngme/",
