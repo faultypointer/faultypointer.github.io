@@ -1,11 +1,11 @@
 +++
 author = "faultypointer"
-title = "3o14"
+title = "LitJour"
 date = "2024-11-29"
 description = "A social media platform based on ActivityPub."
 draft = true
 tags = [
-    "3o14",
+    "litjour",
 ]
 categories = [
     "Project",
