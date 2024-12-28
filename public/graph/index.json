@@ -7,23 +7,124 @@
     "/notes/projects/3o14/activitypub/": {
       "in": [],
       "out": [
-        "/notes/projects/3o14/activitystream/"
+        "/notes/projects/3o14/activitystream/",
+        "/notes/projects/3o14/activitystream/",
+        "/notes/projects/3o14/activitystream/",
+        "/notes/projects/3o14/activityvocab/"
       ]
     },
     "/notes/projects/3o14/activitystream/": {
       "in": [
         "/notes/projects/3o14/activitypub/",
+        "/notes/projects/3o14/activitypub/",
+        "/notes/projects/3o14/activityvocab/",
+        "/notes/projects/3o14/activitypub/",
+        "/notes/projects/3o14/activitypub/",
+        "/notes/projects/3o14/activityvocab/",
+        "/notes/projects/3o14/activitypub/",
+        "/notes/projects/3o14/activitypub/",
+        "/notes/projects/3o14/activityvocab/",
+        "/notes/projects/3o14/activitypub/",
+        "/notes/projects/3o14/activitypub/",
+        "/notes/projects/3o14/activityvocab/",
+        "/notes/projects/3o14/activitypub/",
+        "/notes/projects/3o14/activitypub/",
+        "/notes/projects/3o14/activityvocab/",
+        "/notes/projects/3o14/activitypub/",
+        "/notes/projects/3o14/activitypub/",
+        "/notes/projects/3o14/activityvocab/",
+        "/notes/projects/3o14/activitypub/",
+        "/notes/projects/3o14/activitypub/",
+        "/notes/projects/3o14/activitypub/",
+        "/notes/projects/3o14/activityvocab/",
+        "/notes/projects/3o14/activitypub/",
+        "/notes/projects/3o14/activitypub/",
+        "/notes/projects/3o14/activitypub/",
+        "/notes/projects/3o14/activityvocab/",
+        "/notes/projects/3o14/activitypub/",
+        "/notes/projects/3o14/activitypub/",
+        "/notes/projects/3o14/activitypub/",
+        "/notes/projects/3o14/activityvocab/",
+        "/notes/projects/3o14/activitypub/",
+        "/notes/projects/3o14/activitypub/",
+        "/notes/projects/3o14/activitypub/",
+        "/notes/projects/3o14/activityvocab/",
+        "/notes/projects/3o14/activitypub/",
+        "/notes/projects/3o14/activitypub/",
+        "/notes/projects/3o14/activitypub/",
+        "/notes/projects/3o14/activityvocab/",
+        "/notes/projects/3o14/activitypub/",
+        "/notes/projects/3o14/activitypub/",
+        "/notes/projects/3o14/activitypub/",
+        "/notes/projects/3o14/activityvocab/",
+        "/notes/projects/3o14/activitypub/",
+        "/notes/projects/3o14/activitypub/",
+        "/notes/projects/3o14/activitypub/",
+        "/notes/projects/3o14/activityvocab/",
+        "/notes/projects/3o14/activitypub/",
+        "/notes/projects/3o14/activitypub/",
+        "/notes/projects/3o14/activitypub/",
+        "/notes/projects/3o14/activityvocab/",
+        "/notes/projects/3o14/activitypub/",
+        "/notes/projects/3o14/activitypub/",
+        "/notes/projects/3o14/activitypub/",
         "/notes/projects/3o14/activityvocab/"
       ],
       "out": [
+        "/notes/projects/3o14/activityvocab/",
+        "/notes/projects/3o14/activityvocab/",
+        "/notes/projects/3o14/activityvocab/",
+        "/notes/projects/3o14/activityvocab/",
+        "/notes/projects/3o14/activityvocab/",
+        "/notes/projects/3o14/activityvocab/",
+        "/notes/projects/3o14/activityvocab/",
+        "/notes/projects/3o14/activityvocab/",
+        "/notes/projects/3o14/activityvocab/",
+        "/notes/projects/3o14/activityvocab/",
+        "/notes/projects/3o14/activityvocab/",
+        "/notes/projects/3o14/activityvocab/",
+        "/notes/projects/3o14/activityvocab/",
+        "/notes/projects/3o14/activityvocab/",
         "/notes/projects/3o14/activityvocab/"
       ]
     },
     "/notes/projects/3o14/activityvocab/": {
       "in": [
+        "/notes/projects/3o14/activitystream/",
+        "/notes/projects/3o14/activitystream/",
+        "/notes/projects/3o14/activitystream/",
+        "/notes/projects/3o14/activitystream/",
+        "/notes/projects/3o14/activitystream/",
+        "/notes/projects/3o14/activitystream/",
+        "/notes/projects/3o14/activitystream/",
+        "/notes/projects/3o14/activitystream/",
+        "/notes/projects/3o14/activitystream/",
+        "/notes/projects/3o14/activitystream/",
+        "/notes/projects/3o14/activitystream/",
+        "/notes/projects/3o14/activitypub/",
+        "/notes/projects/3o14/activitystream/",
+        "/notes/projects/3o14/activitypub/",
+        "/notes/projects/3o14/activitystream/",
+        "/notes/projects/3o14/activitypub/",
+        "/notes/projects/3o14/activitystream/",
+        "/notes/projects/3o14/activitypub/",
         "/notes/projects/3o14/activitystream/"
       ],
       "out": [
+        "/notes/projects/3o14/activitystream/",
+        "/notes/projects/3o14/activitystream/",
+        "/notes/projects/3o14/activitystream/",
+        "/notes/projects/3o14/activitystream/",
+        "/notes/projects/3o14/activitystream/",
+        "/notes/projects/3o14/activitystream/",
+        "/notes/projects/3o14/activitystream/",
+        "/notes/projects/3o14/activitystream/",
+        "/notes/projects/3o14/activitystream/",
+        "/notes/projects/3o14/activitystream/",
+        "/notes/projects/3o14/activitystream/",
+        "/notes/projects/3o14/activitystream/",
+        "/notes/projects/3o14/activitystream/",
+        "/notes/projects/3o14/activitystream/",
         "/notes/projects/3o14/activitystream/"
       ]
     },
@@ -32,10 +133,6 @@
       "out": []
     },
     "/notes/projects/booklog/scratchpad/": {
-      "in": [],
-      "out": []
-    },
-    "/notes/projects/litjour/litjour/": {
       "in": [],
       "out": []
     },
@@ -53,6 +150,20 @@
     },
     "/notes/todos/done/tigerstyle/": {
       "in": [
+        "/notes/todos/wil/",
+        "/notes/todos/wil/",
+        "/notes/todos/wil/",
+        "/notes/todos/wil/",
+        "/notes/todos/wil/",
+        "/notes/todos/wil/",
+        "/notes/todos/wil/",
+        "/notes/todos/wil/",
+        "/notes/todos/wil/",
+        "/notes/todos/wil/",
+        "/notes/todos/wil/",
+        "/notes/todos/wil/",
+        "/notes/todos/wil/",
+        "/notes/todos/wil/",
         "/notes/todos/wil/"
       ],
       "out": []
@@ -64,6 +175,20 @@
     "/notes/todos/wil/": {
       "in": [],
       "out": [
+        "/notes/todos/done/tigerstyle/",
+        "/notes/todos/done/tigerstyle/",
+        "/notes/todos/done/tigerstyle/",
+        "/notes/todos/done/tigerstyle/",
+        "/notes/todos/done/tigerstyle/",
+        "/notes/todos/done/tigerstyle/",
+        "/notes/todos/done/tigerstyle/",
+        "/notes/todos/done/tigerstyle/",
+        "/notes/todos/done/tigerstyle/",
+        "/notes/todos/done/tigerstyle/",
+        "/notes/todos/done/tigerstyle/",
+        "/notes/todos/done/tigerstyle/",
+        "/notes/todos/done/tigerstyle/",
+        "/notes/todos/done/tigerstyle/",
         "/notes/todos/done/tigerstyle/"
       ]
     },
@@ -102,11 +227,6 @@
       "permalink": "/notes/projects/booklog/scratchpad/",
       "section": "notes",
       "title": "BookLog Scratchpad"
-    },
-    "/notes/projects/litjour/litjour/": {
-      "permalink": "/notes/projects/litjour/litjour/",
-      "section": "notes",
-      "title": "LitJour"
     },
     "/notes/projects/pngme/pngme/": {
       "permalink": "/notes/projects/pngme/pngme/",
