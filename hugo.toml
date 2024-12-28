@@ -1,51 +1,51 @@
 baseURL = 'https://faultypointer.github.io'
 languageCode = 'en-us'
 title = "faultypointer"
-copyright = 'faultypointer' # Used in the footer copyright mention.
-enableRobotsTXT = true # IMPORTANT: set to true if you want to use the theme's genAI/LLM web crawler blocking feature.
+copyright = 'faultypointer'                 # Used in the footer copyright mention.
+enableRobotsTXT = true                      # IMPORTANT: set to true if you want to use the theme's genAI/LLM web crawler blocking feature.
 
 [module]
-  [[module.imports]]
-    path = "github.com/michenriksen/hugo-theme-til"
+[[module.imports]]
+path = "github.com/michenriksen/hugo-theme-til"
 
 [outputs]
-  home = ['html']
-  section = ['html', 'rss', 'json']
-  page = ['html']
+home = ['html']
+section = ['html', 'rss', 'json']
+page = ['html']
 
 [menus]
-  [[menus.main]]
-    name = 'Notes'
-    pageRef = '/notes'
-    weight = 20
-  [[menus.main]]
-    name = 'Posts'
-    pageRef = '/posts'
-    weight = 30
-  [[menus.main]]
-    name = 'Graph'
-    pageRef = '/graph'
-    weight = 40
+[[menus.main]]
+name = 'Notes'
+pageRef = '/notes'
+weight = 20
+[[menus.main]]
+name = 'Posts'
+pageRef = '/posts'
+weight = 30
+[[menus.main]]
+name = 'Graph'
+pageRef = '/graph'
+weight = 40
 
 [markup]
-  [markup.highlight]
-    noClasses = false
-    style = 'tokyonight-night'
+[markup.highlight]
+noClasses = false
+style = 'gruvbox'
 
-  [markup.goldmark]
-    [markup.goldmark.parser]
-      [markup.goldmark.parser.attribute]
-        block = true
+[markup.goldmark]
+[markup.goldmark.parser]
+[markup.goldmark.parser.attribute]
+block = true
 
 
 [params]
-  [params.author]
-    name = 'faultypointer'
-    email = 'faultypointer@proton.me'
+[params.author]
+name = 'faultypointer'
+email = 'faultypointer@proton.me'
 
-  [params.footer]
-    creativeCommonsLicense = 'by_sa'
+[params.footer]
+creativeCommonsLicense = 'by_sa'
 
-  [params.robotstxt]
-    blockCC = true
-    blockAI = true
+[params.robotstxt]
+blockCC = true
+blockAI = true
