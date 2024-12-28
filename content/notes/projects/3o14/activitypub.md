@@ -123,3 +123,42 @@ and among other posts, she sees the following:
 
 
 ## Actors
+- generally one of `ActivityStreams` `Actor` types
+  - other types like `Profile` can also be `Actors`
+- retrieved like any other objects
+- has an `id` (URI)
+- **ID Normalization**:
+  - if `id` is valid URI, it is used directly
+  - if user forgot to add scheme for a URI, client may provide a default scheme
+  - otherwise entered value is considered invalid
+- once actor's URI is identified, it should be dereferenced
+
+
+### Actor objects
+- **MUST have following properties** along with the ones specified in [Object Identifiers](#object-identifiers)
+  - *Inbox*:
+    - reference to [Ordered Collection] comprised of all the messages received by actor
+  - *Outbox*:
+    - [Ordered collection] of all the messages produced by actor
+  - *Following*:
+    - [Collection] of actors this actor is following
+  - *Followers*:
+    - [Collection] of actors that follow this actor
+- **Maybe Properties**
+  - *Liked*:
+    - [Collection] of objects this actor has liked
+  - *Streams*:
+    - list of supplementary Collections of interests
+  - *preferredUsername*:
+    - short username which maybe used to refer to the actor
+  - *endPoints*:
+    - json object which maps additional endpoints which maybe useful for this actor
+    - *endPoints object may include following properties*:
+      - proxyUrl
+        - endpoint URI so the actor's client may access [objects] which require authentication to access
+        - to use this endpoint, client POSTs an `x-www-form-urlencoded id` parameter with the value being `id` of requested object
+      - oauthAuthorizationEndpoint
+        - TODO
+      - sharedInbox
+        - used for wide delivery of publicly addressed activities, activities sent to followers
+        - should be publicly reachable [OrderedCollection] addressed to [Public] special collection

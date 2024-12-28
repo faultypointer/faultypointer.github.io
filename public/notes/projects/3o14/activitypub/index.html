@@ -30,7 +30,7 @@
   <meta itemprop="description" content="Notes on ActivityPub for minor project">
   <meta itemprop="datePublished" content="2024-11-29T00:00:00+00:00">
   <meta itemprop="dateModified" content="2024-11-29T00:00:00+00:00">
-  <meta itemprop="wordCount" content="524">
+  <meta itemprop="wordCount" content="746">
   <meta itemprop="keywords" content="3o14,Minor-Project,Activitypub">
 
   <meta name="twitter:card" content="summary">
@@ -74,9 +74,9 @@
   ],
   "mainEntityOfPage": "http://localhost:1313/notes/projects/3o14/activitypub/",
   "name": "ActivityPub",
-  "timeRequired": "PT3M",
+  "timeRequired": "PT4M",
   "url": "http://localhost:1313/notes/projects/3o14/activitypub/",
-  "wordCount": 524
+  "wordCount": 746
 }
 </script>
 
@@ -642,6 +642,119 @@ and among other posts, she sees the following:</p>
     </a>
   
 </h3>
+<ul>
+<li>generally one of <code>ActivityStreams</code> <code>Actor</code> types
+<ul>
+<li>other types like <code>Profile</code> can also be <code>Actors</code></li>
+</ul>
+</li>
+<li>retrieved like any other objects</li>
+<li>has an <code>id</code> (URI)</li>
+<li><strong>ID Normalization</strong>:
+<ul>
+<li>if <code>id</code> is valid URI, it is used directly</li>
+<li>if user forgot to add scheme for a URI, client may provide a default scheme</li>
+<li>otherwise entered value is considered invalid</li>
+</ul>
+</li>
+<li>once actor&rsquo;s URI is identified, it should be dereferenced</li>
+</ul>
+<h4 id="actor-objects" class="scroll-mt-8 group">
+  Actor objects
+  
+    <a href="#actor-objects"
+        class="no-underline hidden opacity-50 hover:opacity-100 !text-inherit group-hover:inline-block"
+        aria-hidden="true" title="Link to this heading" tabindex="-1">
+        <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="16"
+  height="16"
+  fill="none"
+  stroke="currentColor"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  stroke-width="2"
+  class="lucide lucide-link w-4 h-4 block"
+  viewBox="0 0 24 24"
+>
+  <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+  <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+</svg>
+
+    </a>
+  
+</h4>
+<ul>
+<li><strong>MUST have following properties</strong> along with the ones specified in <a href="#object-identifiers">Object Identifiers</a>
+<ul>
+<li><em>Inbox</em>:
+<ul>
+<li>reference to [Ordered Collection] comprised of all the messages received by actor</li>
+</ul>
+</li>
+<li><em>Outbox</em>:
+<ul>
+<li>[Ordered collection] of all the messages produced by actor</li>
+</ul>
+</li>
+<li><em>Following</em>:
+<ul>
+<li>[Collection] of actors this actor is following</li>
+</ul>
+</li>
+<li><em>Followers</em>:
+<ul>
+<li>[Collection] of actors that follow this actor</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Maybe Properties</strong>
+<ul>
+<li><em>Liked</em>:
+<ul>
+<li>[Collection] of objects this actor has liked</li>
+</ul>
+</li>
+<li><em>Streams</em>:
+<ul>
+<li>list of supplementary Collections of interests</li>
+</ul>
+</li>
+<li><em>preferredUsername</em>:
+<ul>
+<li>short username which maybe used to refer to the actor</li>
+</ul>
+</li>
+<li><em>endPoints</em>:
+<ul>
+<li>json object which maps additional endpoints which maybe useful for this actor</li>
+<li><em>endPoints object may include following properties</em>:
+<ul>
+<li>proxyUrl
+<ul>
+<li>endpoint URI so the actor&rsquo;s client may access [objects] which require authentication to access</li>
+<li>to use this endpoint, client POSTs an <code>x-www-form-urlencoded id</code> parameter with the value being <code>id</code> of requested object</li>
+</ul>
+</li>
+<li>oauthAuthorizationEndpoint
+<ul>
+<li>TODO</li>
+</ul>
+</li>
+<li>sharedInbox
+<ul>
+<li>used for wide delivery of publicly addressed activities, activities sent to followers</li>
+<li>should be publicly reachable [OrderedCollection] addressed to [Public] special collection</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 
   </article>
     <aside class="not-prose flex flex-col space-y-8 border-t pt-6">
