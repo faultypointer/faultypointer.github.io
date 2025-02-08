@@ -2,4 +2,4 @@
 title = "Now"
 +++
 
-Just.
+just.
