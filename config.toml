@@ -1,9 +1,9 @@
 base_url = "https://blog.carboxi.de"
 
 # about me
-title = "carboxide"
-description = "The carbons and oxygens of my life."
-author = "scientiac"
+title = "Faulty's blog"
+description = "The carbon and nitrogen of my life."
+author = "faultypointer"
 
 # disable sass and search index
 compile_sass = false
@@ -25,6 +25,6 @@ highlight_theme = "base16-ocean-light"
 
 # extra stuff
 [extra]
-author = "scientiac"
-email = "iac@scientiac.space"
+author = "faultypointer"
+email = "faultypointer@proton.me"
 profile = "/thumbnail.png"

@@ -1,3 +1,3 @@
-# blog.carboxi.de
+# faultypointer.github.io
 
-The carbons and oxygens of my life.
+The carbon and nitrogen of my life.
