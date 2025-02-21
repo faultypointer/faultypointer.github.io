@@ -7,7 +7,6 @@ tags = ["algorithm"]
 ## Origin
 
 url: [Leetcode: Problem no. 2412](https://leetcode.com/problems/minimum-money-required-before-transactions/description/)
-
 ### Problem
 
 You are given a **0-indexed** 2D integer array `transactions`, where `transactions[i] = [costi, cashbacki]`.
