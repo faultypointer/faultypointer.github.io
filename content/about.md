@@ -1,5 +1,6 @@
 +++
 title = "About Me"
+date = 2025-02-22
 [taxonomies]
 tags = ["about"]
 +++
