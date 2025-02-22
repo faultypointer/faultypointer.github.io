@@ -45,7 +45,7 @@ Well if the index of the array are the nodes of a graph and the jumps indicate t
 DFS time complexity is $\mathcal{O}(b^m)$ where b is the branching factor and m is the maximum depth
 which is a lot to be honest.
  And I was correct.
- ![[Pasted image 20250222173449.png]]
+ ![Solution rejected due to time limit exceeding](../static/images/apad2-time.png)
 
 so I do need to optimize this using the added information or go for a different approach.
 
