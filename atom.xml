@@ -1,0 +1,616 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Faulty&#x27;s blog</title>
+    <subtitle>The carbon and nitrogen of my life.</subtitle>
+    <link rel="self" type="application/atom+xml" href="https://faultypointer.github.io/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://faultypointer.github.io"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2025-02-23T00:00:00+00:00</updated>
+    <id>https://faultypointer.github.io/atom.xml</id>
+    <entry xml:lang="en">
+        <title>A problem a day: Day 3</title>
+        <published>2025-02-23T00:00:00+00:00</published>
+        <updated>2025-02-23T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              faultypointer
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://faultypointer.github.io/aproblemaday3/"/>
+        <id>https://faultypointer.github.io/aproblemaday3/</id>
+        
+        <content type="html" xml:base="https://faultypointer.github.io/aproblemaday3/">&lt;h2 id=&quot;origin&quot;&gt;Origin&lt;&#x2F;h2&gt;
+&lt;p&gt;url: &lt;a href=&quot;https:&#x2F;&#x2F;leetcode.com&#x2F;problems&#x2F;smallest-good-base&#x2F;description&#x2F;&quot;&gt;Leetcode: Problem no. 483&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;problem&quot;&gt;Problem&lt;&#x2F;h3&gt;
+&lt;p&gt;Given an integer &lt;code&gt;n&lt;&#x2F;code&gt; represented as a string, return &lt;em&gt;the smallest &lt;strong&gt;good base&lt;&#x2F;strong&gt; of&lt;&#x2F;em&gt; &lt;code&gt;n&lt;&#x2F;code&gt;.
+We call &lt;code&gt;k &amp;gt;= 2&lt;&#x2F;code&gt; a &lt;strong&gt;good base&lt;&#x2F;strong&gt; of &lt;code&gt;n&lt;&#x2F;code&gt;, if all digits of &lt;code&gt;n&lt;&#x2F;code&gt; base &lt;code&gt;k&lt;&#x2F;code&gt; are &lt;code&gt;1&lt;&#x2F;code&gt;&#x27;s.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;examples&quot;&gt;Examples&lt;&#x2F;h3&gt;
+&lt;h4 id=&quot;example-1&quot;&gt;Example 1&lt;&#x2F;h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Input:&lt;&#x2F;strong&gt; n = &quot;13&quot;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Output:&lt;&#x2F;strong&gt; &quot;3&quot;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Explanation:&lt;&#x2F;strong&gt; 13 base 3 is 111.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h4 id=&quot;example-2&quot;&gt;Example 2&lt;&#x2F;h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Input:&lt;&#x2F;strong&gt; n = &quot;4681&quot;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Output:&lt;&#x2F;strong&gt; &quot;8&quot;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Explanation:&lt;&#x2F;strong&gt; 4681 base 8 is 11111.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h4 id=&quot;example-3&quot;&gt;Example 3&lt;&#x2F;h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Input:&lt;&#x2F;strong&gt; n = &quot;1000000000000000000&quot;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Output:&lt;&#x2F;strong&gt; &quot;999999999999999999&quot;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Explanation:&lt;&#x2F;strong&gt; 1000000000000000000 base 999999999999999999 is 11.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;constraints&quot;&gt;Constraints&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;n&lt;&#x2F;code&gt; is an integer in the range $[3, 10^{18}]$.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;n&lt;&#x2F;code&gt; does not contain any leading zeros.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;journey&quot;&gt;Journey&lt;&#x2F;h2&gt;
+&lt;p&gt;I&#x27;d like to believe there is a formula for this.
+Every digit should be 1 so
+$$
+n = \sum_{p=0}^t k^p
+$$
+I need to find out what k is. I don&#x27;t know that &lt;code&gt;t&lt;&#x2F;code&gt; gives the smallest &lt;code&gt;k&lt;&#x2F;code&gt; for a given &lt;code&gt;n&lt;&#x2F;code&gt;. I do know that for &lt;code&gt;t=1&lt;&#x2F;code&gt;
+$n = k^0 + k^1$
+$k = n-1$
+so t = 1 gives the largest (and is some cases like example 3 above the only) base &lt;code&gt;k&lt;&#x2F;code&gt; for which all the digits are 1.&lt;&#x2F;p&gt;
+&lt;p&gt;I also know that as I keep increasing t, then I will keep finding a &lt;code&gt;k&lt;&#x2F;code&gt; smaller than the previous one (if it exists).
+But where do I stop? or better yet where do I begin high and keep decreasing &lt;code&gt;t&lt;&#x2F;code&gt; until I find a valid &lt;code&gt;k&lt;&#x2F;code&gt;
+since $k \ge 2$, we can find the largest t where k is 2.
+$$
+\begin{align*}
+n &amp;amp;= \sum_{p=0}^t 2^p \\
+n &amp;amp;= 2^0 + 2^1 + 2^2 + ... + 2^t \\
+n &amp;amp;= \frac{1-2^{t+1}}{1-2} \\
+n &amp;amp;= 2^{t+1} - 1 \\
+t+1 &amp;amp;= \log_2(n+1) \\
+t &amp;amp;= \log_2(\frac{n+1}{2})
+\end{align*}
+$$
+so we can start at &lt;code&gt;t&lt;&#x2F;code&gt; equal to the above value, and &lt;code&gt;k=2&lt;&#x2F;code&gt; we can compute $n\prime$ as
+$$
+n\prime = \frac{k^{t+1} -1}{k-1}
+$$
+Now if this $n\prime$ is equal to the given n then we have found that the good base &lt;code&gt;k&lt;&#x2F;code&gt;. If not, then there are two cases. If $n\prime \le n$, then we should increment &lt;code&gt;k&lt;&#x2F;code&gt; otherwise decrement &lt;code&gt;t&lt;&#x2F;code&gt;. Now the solution seems innocent enough.&lt;&#x2F;p&gt;
+&lt;p&gt;Remember that in the worst case we have to go from &lt;code&gt;k=2&lt;&#x2F;code&gt; go k = &lt;code&gt;n-1&lt;&#x2F;code&gt; and thats not all. We are iterating over &lt;code&gt;t&lt;&#x2F;code&gt; which starts at the log of &lt;code&gt;n+1&lt;&#x2F;code&gt; and stops at &lt;code&gt;t=2&lt;&#x2F;code&gt;. For simplification, lets say that we check for all values of &lt;code&gt;k&lt;&#x2F;code&gt; in range [2, n-1], for all values of &lt;code&gt;t&lt;&#x2F;code&gt; in range $[log_2{(n+1)&#x2F;2}, 2]$. Then the worst case time complexity is $\mathcal{O}(n log(n))$.&lt;&#x2F;p&gt;
+&lt;p&gt;Which doesn&#x27;t seem much. The sorting algorithms are $\mathcal{O}(n log(n))$.  But look at the constraints. The n can be as high as $10^{18}$.  Now my laptop has a cpu with speed of 2GHz. (forget about how many processors ans such for now). That means that it can run a maximum of $2*10^9$ clock cycles per second(also forgetting about boost and overclock because I also don&#x27;t know). Lets be very very very optimistic here and suppose that every operation in that algorithm takes a single clock cycle[&lt;em&gt;I may not know hardware stuff very much but I did have microprocessor as a subject in one of semester. So trust me when I say this would have been the biggest lie I&#x27;ve ever told if it wasn&#x27;t for the next line.&lt;&#x2F;em&gt;]. Lets also suppose that the line of code translates 1:1 to operations then the code below (in python).&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;python&quot; style=&quot;background-color:#eff1f5;color:#4f5b66;&quot; class=&quot;language-python &quot;&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;def &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8fa1b3;&quot;&gt;good_base&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;n&lt;&#x2F;span&gt;&lt;span&gt;: float):
+&lt;&#x2F;span&gt;&lt;span&gt;    t = math.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;floor&lt;&#x2F;span&gt;&lt;span&gt;(math.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;log2&lt;&#x2F;span&gt;&lt;span&gt;((n+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span&gt;) &#x2F; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;2&lt;&#x2F;span&gt;&lt;span&gt;))
+&lt;&#x2F;span&gt;&lt;span&gt;    k = &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;2
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;while &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;True&lt;&#x2F;span&gt;&lt;span&gt;:
+&lt;&#x2F;span&gt;&lt;span&gt;        n_prime = (math.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;pow&lt;&#x2F;span&gt;&lt;span&gt;(k, t+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span&gt;) - &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span&gt;) &#x2F; (k-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span&gt;n_prime == n:
+&lt;&#x2F;span&gt;&lt;span&gt;            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;break
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;elif &lt;&#x2F;span&gt;&lt;span&gt;n_prime &amp;lt; n:
+&lt;&#x2F;span&gt;&lt;span&gt;            k+=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;1
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;else&lt;&#x2F;span&gt;&lt;span&gt;:
+&lt;&#x2F;span&gt;&lt;span&gt;            t-=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;1
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;return &lt;&#x2F;span&gt;&lt;span&gt;k
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Then the loop of 8 lines takes about $\frac{8n}{2*10^{9}}$ seconds to run. For numbers less than $10^9$, it takes less than a second. Why bother with the numbers in between, lets go straight to the last one. It takes about $4000000000$ seconds. That is, it takes $126.84$ years for this hugely oversimplified and optimistic imaginary computational model to find out that the required k is $10^{18} -1$.&lt;&#x2F;p&gt;
+&lt;p&gt;So what to do. what to do.&lt;&#x2F;p&gt;
+&lt;p&gt;aha. Good old binary search to the rescue
+why do i have to search the the numbers for k 2 through n-1. what i can do is
+check for every t from the maximum one given by $\log_2(\frac{n+1}{2})$ down to 1
+if k = 2 results in $n\prime = n$. if it does we have found the smallest good base if not we have to go for the middle one. so what is the middle one
+$$
+k_{mid} = \frac{k_0(2)+?}{2}
+$$
+we need to figure out the maximum k. Now could just use &lt;code&gt;n-1&lt;&#x2F;code&gt;. if we are doing binary search then we only check the log(n) numbers.
+$log_2(10^{18}) = 59.79$
+and we have to check that max t to 1 and max t is also given by log base 2 of n. So the number of elements we are checking for the maximum n defined for this problem is nearly $60*60=3600$. compare that with $60 * 10 ^{18}$ we were doing earlier.
+Lo and behold&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;python&quot; style=&quot;background-color:#eff1f5;color:#4f5b66;&quot; class=&quot;language-python &quot;&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;import &lt;&#x2F;span&gt;&lt;span&gt;math
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;def &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8fa1b3;&quot;&gt;good_base2&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;n&lt;&#x2F;span&gt;&lt;span&gt;):
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span&gt;n &amp;lt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;2&lt;&#x2F;span&gt;&lt;span&gt;:
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;return &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;1
+&lt;&#x2F;span&gt;&lt;span&gt;    t = &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;0
+&lt;&#x2F;span&gt;&lt;span&gt;    temp = (n + &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span&gt;) &#x2F;&#x2F; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;2
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;while &lt;&#x2F;span&gt;&lt;span&gt;temp &amp;gt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span&gt;:
+&lt;&#x2F;span&gt;&lt;span&gt;        temp &#x2F;&#x2F;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;2
+&lt;&#x2F;span&gt;&lt;span&gt;        t += &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;1
+&lt;&#x2F;span&gt;&lt;span&gt;    found = &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;False
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;while &lt;&#x2F;span&gt;&lt;span&gt;not found and t &amp;gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span&gt;:
+&lt;&#x2F;span&gt;&lt;span&gt;        k = &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;2
+&lt;&#x2F;span&gt;&lt;span&gt;        k_m = n
+&lt;&#x2F;span&gt;&lt;span&gt;        prev_k = &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;1
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;while &lt;&#x2F;span&gt;&lt;span&gt;k &amp;lt; n:
+&lt;&#x2F;span&gt;&lt;span&gt;            numerator = &lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;pow&lt;&#x2F;span&gt;&lt;span&gt;(k, t + &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span&gt;) - &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;1
+&lt;&#x2F;span&gt;&lt;span&gt;            denominator = k - &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;1
+&lt;&#x2F;span&gt;&lt;span&gt;            n_prime = numerator &#x2F;&#x2F; denominator            
+&lt;&#x2F;span&gt;&lt;span&gt;            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span&gt;n_prime == n:
+&lt;&#x2F;span&gt;&lt;span&gt;                found = &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;True
+&lt;&#x2F;span&gt;&lt;span&gt;                &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;break
+&lt;&#x2F;span&gt;&lt;span&gt;            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;elif &lt;&#x2F;span&gt;&lt;span&gt;n_prime &amp;lt; n:
+&lt;&#x2F;span&gt;&lt;span&gt;                prev_k = k
+&lt;&#x2F;span&gt;&lt;span&gt;                k = (k + k_m) &#x2F;&#x2F; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;2
+&lt;&#x2F;span&gt;&lt;span&gt;            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;else&lt;&#x2F;span&gt;&lt;span&gt;:
+&lt;&#x2F;span&gt;&lt;span&gt;                k_m = k
+&lt;&#x2F;span&gt;&lt;span&gt;                k = (prev_k + k_m) &#x2F;&#x2F; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;2
+&lt;&#x2F;span&gt;&lt;span&gt;            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span&gt;prev_k == k:
+&lt;&#x2F;span&gt;&lt;span&gt;                t -= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;1
+&lt;&#x2F;span&gt;&lt;span&gt;                &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;break
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;return &lt;&#x2F;span&gt;&lt;span&gt;k 
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;an imaginary and hopefully delusional time of 126 years to
+&lt;img src=&quot;&#x2F;images&#x2F;apad3-sol2-time.png&quot; alt=&quot;Running time of solution 2 to n = 10^18&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;but we can do better. atleast theoretically. It does involve computing square root.
+What am I taking about?
+well you see how we computed the maximum t given a n.
+we can also do the opposite. we can compute the maximum &lt;code&gt;k&lt;&#x2F;code&gt; for a given &lt;code&gt;t&lt;&#x2F;code&gt; such that any value of k more than this will make &lt;code&gt;n prime&lt;&#x2F;code&gt; greater than &lt;code&gt;n&lt;&#x2F;code&gt;.
+we have
+$$
+n = k^0 + k ^1 + k^2 + .... + k^t
+$$
+lets us ignore all the expression of &lt;code&gt;k&lt;&#x2F;code&gt; before $k^t$ so it becomes
+$$
+\begin{aligned}
+n = k^t \
+k = \sqrt[t]{n}
+\end{aligned}
+$$
+for any k greater than this would make the calculated n prime greater than n.
+as a bonus we can just check with the final value as $\sqrt[t]{n}$ and if the calculated n is smaller than given n then we just go to the next t. What if its bigger than the given then we just subtract one from the calculated &lt;code&gt;k&lt;&#x2F;code&gt; for this t ($\sqrt[t]{n}$).&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;python&quot; style=&quot;background-color:#eff1f5;color:#4f5b66;&quot; class=&quot;language-python &quot;&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;def &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8fa1b3;&quot;&gt;good_base3&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;n&lt;&#x2F;span&gt;&lt;span&gt;):
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span&gt;n &amp;lt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;2&lt;&#x2F;span&gt;&lt;span&gt;:
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;return &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;1
+&lt;&#x2F;span&gt;&lt;span&gt;    t = &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;0
+&lt;&#x2F;span&gt;&lt;span&gt;    temp = (n + &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span&gt;) &#x2F;&#x2F; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;2
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;while &lt;&#x2F;span&gt;&lt;span&gt;temp &amp;gt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span&gt;:
+&lt;&#x2F;span&gt;&lt;span&gt;        temp &#x2F;&#x2F;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;2
+&lt;&#x2F;span&gt;&lt;span&gt;        t += &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;1
+&lt;&#x2F;span&gt;&lt;span&gt;    k = math.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;floor&lt;&#x2F;span&gt;&lt;span&gt;(n ** (&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span&gt;&#x2F;t))
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;while &lt;&#x2F;span&gt;&lt;span&gt;t &amp;gt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span&gt;:
+&lt;&#x2F;span&gt;&lt;span&gt;        numerator = &lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;pow&lt;&#x2F;span&gt;&lt;span&gt;(k, t + &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span&gt;) - &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;1
+&lt;&#x2F;span&gt;&lt;span&gt;        denominator = k - &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;1
+&lt;&#x2F;span&gt;&lt;span&gt;        n_prime = numerator &#x2F;&#x2F; denominator
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span&gt;(n_prime == n):
+&lt;&#x2F;span&gt;&lt;span&gt;            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;break
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span&gt;(n_prime &amp;gt; n):
+&lt;&#x2F;span&gt;&lt;span&gt;            k -= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;1
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;else&lt;&#x2F;span&gt;&lt;span&gt;:
+&lt;&#x2F;span&gt;&lt;span&gt;            t-=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;1
+&lt;&#x2F;span&gt;&lt;span&gt;            k = math.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;floor&lt;&#x2F;span&gt;&lt;span&gt;(n ** (&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span&gt;&#x2F;t))
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;return &lt;&#x2F;span&gt;&lt;span&gt;k 
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;apad3-sol3-time.png&quot; alt=&quot;Running time of solution 3 to n = 10^18&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;And I wanted to calculate how many iterations each one took.
+The &lt;code&gt;good_base2&lt;&#x2F;code&gt; took a total of 3511 iterations while the &lt;code&gt;good_base3&lt;&#x2F;code&gt; took 62 iterations. This make me not sure about the correctness of the last one. I mean I could just try it on leetcode and see. Also I have been avoiding the String thing in the questions. I&#x27;m assuming I can just parse the string as u128 in rust.
+okay second one is definetely wrong.
+well it wasn&#x27;t wrong the floats caused the error. if t ever becomes 1, the float power function to calculate k cannot
+store the value exactly. (this was the problem in both rust and python). rust has f128 which didn&#x27;t cause this issue but thats not a stable feature so i could not use that.
+anyway if it t becomes 1 then we know the answer is n-1 so i run the loop until t is greater than 1.
+when the loop exit, I know if it exited by finding the value or if t reaching one. I used bool found for that but as im writing this I realize I could have just checked t is 1 or not.
+also python solution also caused the floating point approximation error. so does that mean python stores floating point as 64 bits too.&lt;&#x2F;p&gt;
+&lt;p&gt;and why didn&#x27;t this happen for the number $10^{18}$ but for a complete random number.
+I think this could all be explained if I made some proof and explaination of the problem but then again I&#x27;m really not in the mood. so&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;destination&quot;&gt;Destination&lt;&#x2F;h2&gt;
+&lt;p&gt;I don&#x27;t really know what to write here. I mean usually I write how the solution works but for this one I feel like I&#x27;ve already explained everything in the [[#Journey]] section above. So have a look at the solution in rust.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;rust&quot; style=&quot;background-color:#eff1f5;color:#4f5b66;&quot; class=&quot;language-rust &quot;&gt;&lt;code class=&quot;language-rust&quot; data-lang=&quot;rust&quot;&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;impl &lt;&#x2F;span&gt;&lt;span&gt;Solution {
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;pub fn &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8fa1b3;&quot;&gt;smallest_good_base&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;n&lt;&#x2F;span&gt;&lt;span&gt;: String) -&amp;gt; String {
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;let&lt;&#x2F;span&gt;&lt;span&gt; n = n.parse::&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;u128&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;().&lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;unwrap&lt;&#x2F;span&gt;&lt;span&gt;();
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;let mut&lt;&#x2F;span&gt;&lt;span&gt; temp = (n + &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span&gt;) &#x2F; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;2&lt;&#x2F;span&gt;&lt;span&gt;;
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;let mut&lt;&#x2F;span&gt;&lt;span&gt; t = &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span&gt;;
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;let mut&lt;&#x2F;span&gt;&lt;span&gt; found = &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;false&lt;&#x2F;span&gt;&lt;span&gt;;
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a7adba;&quot;&gt;&#x2F;&#x2F; approximate log base 2
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;while&lt;&#x2F;span&gt;&lt;span&gt; temp &amp;gt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;1 &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;            temp &#x2F;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;2&lt;&#x2F;span&gt;&lt;span&gt;;
+&lt;&#x2F;span&gt;&lt;span&gt;            t += &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span&gt;;
+&lt;&#x2F;span&gt;&lt;span&gt;        }
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;let mut&lt;&#x2F;span&gt;&lt;span&gt; k = ((n as &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;f64&lt;&#x2F;span&gt;&lt;span&gt;).&lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;powf&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;1.0 &lt;&#x2F;span&gt;&lt;span&gt;&#x2F; t as &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;f64&lt;&#x2F;span&gt;&lt;span&gt;)).&lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;floor&lt;&#x2F;span&gt;&lt;span&gt;() as &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;u128&lt;&#x2F;span&gt;&lt;span&gt;;
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;while&lt;&#x2F;span&gt;&lt;span&gt; t &amp;gt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;1 &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;let&lt;&#x2F;span&gt;&lt;span&gt; n_prime = (k.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;pow&lt;&#x2F;span&gt;&lt;span&gt;(t + &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span&gt;) - &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span&gt;) &#x2F; (k - &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span&gt;);
+&lt;&#x2F;span&gt;&lt;span&gt;            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;if&lt;&#x2F;span&gt;&lt;span&gt; n_prime == n {
+&lt;&#x2F;span&gt;&lt;span&gt;                found = &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;true&lt;&#x2F;span&gt;&lt;span&gt;;
+&lt;&#x2F;span&gt;&lt;span&gt;                &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;break&lt;&#x2F;span&gt;&lt;span&gt;;
+&lt;&#x2F;span&gt;&lt;span&gt;            } &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;else if&lt;&#x2F;span&gt;&lt;span&gt; n_prime &amp;gt; n {
+&lt;&#x2F;span&gt;&lt;span&gt;                k -= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span&gt;;
+&lt;&#x2F;span&gt;&lt;span&gt;            } &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;else &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;                t -= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span&gt;;
+&lt;&#x2F;span&gt;&lt;span&gt;                k = ((n as &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;f64&lt;&#x2F;span&gt;&lt;span&gt;).&lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;powf&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;1.0 &lt;&#x2F;span&gt;&lt;span&gt;&#x2F; t as &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;f64&lt;&#x2F;span&gt;&lt;span&gt;)).&lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;floor&lt;&#x2F;span&gt;&lt;span&gt;() as &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;u128&lt;&#x2F;span&gt;&lt;span&gt;;
+&lt;&#x2F;span&gt;&lt;span&gt;            }
+&lt;&#x2F;span&gt;&lt;span&gt;        }
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;if&lt;&#x2F;span&gt;&lt;span&gt; found {
+&lt;&#x2F;span&gt;&lt;span&gt;            k.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;to_string&lt;&#x2F;span&gt;&lt;span&gt;()
+&lt;&#x2F;span&gt;&lt;span&gt;        } &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;else &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;            (n-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span&gt;).&lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;to_string&lt;&#x2F;span&gt;&lt;span&gt;()
+&lt;&#x2F;span&gt;&lt;span&gt;        }
+&lt;&#x2F;span&gt;&lt;span&gt;    }
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>A problem a day: Day 2</title>
+        <published>2025-02-22T00:00:00+00:00</published>
+        <updated>2025-02-22T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              faultypointer
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://faultypointer.github.io/aproblemaday2/"/>
+        <id>https://faultypointer.github.io/aproblemaday2/</id>
+        
+        <content type="html" xml:base="https://faultypointer.github.io/aproblemaday2/">&lt;h2 id=&quot;origin&quot;&gt;Origin&lt;&#x2F;h2&gt;
+&lt;p&gt;url: &lt;a href=&quot;https:&#x2F;&#x2F;leetcode.com&#x2F;problems&#x2F;jump-game&#x2F;description&#x2F;&quot;&gt;Leetcode: Problem no. 55&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;problem&quot;&gt;Problem&lt;&#x2F;h3&gt;
+&lt;p&gt;You are given an integer array &lt;code&gt;nums&lt;&#x2F;code&gt;. You are initially positioned at the array&#x27;s &lt;strong&gt;first index&lt;&#x2F;strong&gt;, and each element in the array represents your maximum jump length at that position.&lt;&#x2F;p&gt;
+&lt;p&gt;Return &lt;code&gt;true&lt;&#x2F;code&gt; &lt;em&gt;if you can reach the last index, or&lt;&#x2F;em&gt; &lt;code&gt;false&lt;&#x2F;code&gt; &lt;em&gt;otherwise&lt;&#x2F;em&gt;.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;examples&quot;&gt;Examples&lt;&#x2F;h3&gt;
+&lt;p&gt;&lt;strong&gt;Input:&lt;&#x2F;strong&gt; nums = [2,3,1,1,4]
+&lt;strong&gt;Output:&lt;&#x2F;strong&gt; true
+&lt;strong&gt;Explanation:&lt;&#x2F;strong&gt; Jump 1 step from index 0 to 1, then 3 steps to the last index.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Input:&lt;&#x2F;strong&gt; nums = [3,2,1,0,4]
+&lt;strong&gt;Output:&lt;&#x2F;strong&gt; false
+&lt;strong&gt;Explanation:&lt;&#x2F;strong&gt; You will always arrive at index 3 no matter what. Its maximum jump length is 0, which makes it impossible to reach the last index.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;constraints&quot;&gt;Constraints&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;$1 &amp;lt;= nums.length &amp;lt;= 10^4$&lt;&#x2F;li&gt;
+&lt;li&gt;$0 &amp;lt;= nums[i] &amp;lt;= 10^5$&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;journey&quot;&gt;Journey&lt;&#x2F;h2&gt;
+&lt;p&gt;Well if the index of the array are the nodes of a graph and the jumps indicate the path from one node to another ten its just finding if a path exists from first to last node(index). With the added context and information I feel like there is an easier way to do this.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;a-simple-dfs&quot;&gt;A Simple DFS&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;put the start index(0) in the stack.&lt;&#x2F;li&gt;
+&lt;li&gt;while the stack is not empty
+&lt;ul&gt;
+&lt;li&gt;pop from stack&lt;&#x2F;li&gt;
+&lt;li&gt;if this is the final index (nums.length) return true&lt;&#x2F;li&gt;
+&lt;li&gt;put all of its children (current index + (1 to the value at current index))&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;return false&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;DFS time complexity is $\mathcal{O}(b^m)$ where b is the branching factor and m is the maximum depth
+which is a lot to be honest.
+And I was correct.
+&lt;img src=&quot;&#x2F;images&#x2F;apad2-time.png&quot; alt=&quot;Solution rejected due to time limit exceeding&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;so I do need to optimize this using the added information or go for a different approach.&lt;&#x2F;p&gt;
+&lt;p&gt;starting from the last index, move down wards to the first index
+if value at current index is greater than or equal to (goal index - current index) set goal index to current index&lt;&#x2F;p&gt;
+&lt;p&gt;when the loop ends, if the goal index is 0 return true else false&lt;&#x2F;p&gt;
+&lt;p&gt;I don&#x27;t know how I went from exponential time to linear time. Also I don&#x27;t know what made me think about the numbers in reverse.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;destination&quot;&gt;Destination&lt;&#x2F;h2&gt;
+&lt;p&gt;We have a list of numbers, for example like this [2,3,1,1,4], and we want to find if we can go from index 0 to last index. Say we are at the goal index, so without any jumping we are already at the goal index and thus have reached it.&lt;&#x2F;p&gt;
+&lt;p&gt;What about the index one before the goal. If we can jump from this one to goal, we have reached the goal index. How do we know if we can jump from this one to the last one? Since the value at that index indicates the jumping ability, we can jump from current index to goal index if the value is greater than the distance between current index and goal index. So if the value is greater than or equal to 1 we can reach the goal index from the index one before it.&lt;&#x2F;p&gt;
+&lt;p&gt;Do you know what this means? It means the if we can somehow reach this index, then we can reach the goal index as well. So we can just set this index as the goal index.&lt;&#x2F;p&gt;
+&lt;p&gt;What if we can&#x27;t jump from this index to the goal one? Does that mean we stop the algorithm and return false? No, because the index before this index may have the jumping ability to jump over this index. Imagine the numbers as [2, 0, 1]. The second last index&#x27;s value is 0 so we can&#x27;t reach the goal state from it. But the index before it, the first index,  has value 2 which is equal to the distance between first index and the goal index. So we set the goal index to first index.&lt;&#x2F;p&gt;
+&lt;p&gt;We continue this until we reach the first index. At this point, the goal index will the index closest to the first index from which we can reach the actual goal index defined in the problem. If we can reach  the current goal index from the first index, the goal index becomes the first index.&lt;&#x2F;p&gt;
+&lt;p&gt;If ,after the loop is finished, the goal index is the current index, that means we can reach the actual goal index from the first index.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;rust&quot; style=&quot;background-color:#eff1f5;color:#4f5b66;&quot; class=&quot;language-rust &quot;&gt;&lt;code class=&quot;language-rust&quot; data-lang=&quot;rust&quot;&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;impl &lt;&#x2F;span&gt;&lt;span&gt;Solution {
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;pub fn &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8fa1b3;&quot;&gt;can_jump&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;nums&lt;&#x2F;span&gt;&lt;span&gt;: Vec&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;i32&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;) -&amp;gt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;bool &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;let mut&lt;&#x2F;span&gt;&lt;span&gt; goal_idx = nums.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;len&lt;&#x2F;span&gt;&lt;span&gt;() - &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span&gt;;
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;for &lt;&#x2F;span&gt;&lt;span&gt;(curr_idx, val) in nums.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;iter&lt;&#x2F;span&gt;&lt;span&gt;().&lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;enumerate&lt;&#x2F;span&gt;&lt;span&gt;().&lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;rev&lt;&#x2F;span&gt;&lt;span&gt;() {
+&lt;&#x2F;span&gt;&lt;span&gt;            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span&gt;*val &amp;gt;= (goal_idx - curr_idx) as &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;i32 &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;                goal_idx = curr_idx;
+&lt;&#x2F;span&gt;&lt;span&gt;            }
+&lt;&#x2F;span&gt;&lt;span&gt;        } 
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;if&lt;&#x2F;span&gt;&lt;span&gt; goal_idx == &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;0 &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;return &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;true&lt;&#x2F;span&gt;&lt;span&gt;;
+&lt;&#x2F;span&gt;&lt;span&gt;        }
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;return &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;false&lt;&#x2F;span&gt;&lt;span&gt;;
+&lt;&#x2F;span&gt;&lt;span&gt;    }
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>A problem a day: Day 1</title>
+        <published>2025-02-20T00:00:00+00:00</published>
+        <updated>2025-02-20T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              faultypointer
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://faultypointer.github.io/aproblemaday/"/>
+        <id>https://faultypointer.github.io/aproblemaday/</id>
+        
+        <content type="html" xml:base="https://faultypointer.github.io/aproblemaday/">&lt;h2 id=&quot;origin&quot;&gt;Origin&lt;&#x2F;h2&gt;
+&lt;p&gt;url: &lt;a href=&quot;https:&#x2F;&#x2F;leetcode.com&#x2F;problems&#x2F;minimum-money-required-before-transactions&#x2F;description&#x2F;&quot;&gt;Leetcode: Problem no. 2412&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;problem&quot;&gt;Problem&lt;&#x2F;h3&gt;
+&lt;p&gt;You are given a &lt;strong&gt;0-indexed&lt;&#x2F;strong&gt; 2D integer array &lt;code&gt;transactions&lt;&#x2F;code&gt;, where &lt;code&gt;transactions[i] = [costi, cashbacki]&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;The array describes transactions, where each transaction must be completed exactly once in &lt;strong&gt;some order&lt;&#x2F;strong&gt;. At any given moment, you have a certain amount of &lt;code&gt;money&lt;&#x2F;code&gt;. In order to complete transaction &lt;code&gt;i&lt;&#x2F;code&gt;, &lt;code&gt;money &amp;gt;= costi&lt;&#x2F;code&gt; must hold true. After performing a transaction, &lt;code&gt;money&lt;&#x2F;code&gt; becomes &lt;code&gt;money - costi + cashbacki&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Return &lt;em&gt;the minimum amount of&lt;&#x2F;em&gt; &lt;code&gt;money&lt;&#x2F;code&gt; &lt;em&gt;required before any transaction so that all of the transactions can be completed &lt;strong&gt;regardless of the order&lt;&#x2F;strong&gt; of the transactions.&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;examples&quot;&gt;Examples&lt;&#x2F;h3&gt;
+&lt;p&gt;&lt;strong&gt;Input:&lt;&#x2F;strong&gt; transactions = [ [2,1],[5,0],[4,2] ]
+&lt;strong&gt;Output:&lt;&#x2F;strong&gt; 10
+&lt;strong&gt;Explanation:&lt;&#x2F;strong&gt;
+Starting with money = 10, the transactions can be performed in any order.
+It can be shown that starting with money &amp;lt; 10 will fail to complete all transactions in some order.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Input:&lt;&#x2F;strong&gt; transactions = [ [3,0],[0,3] ]
+&lt;strong&gt;Output:&lt;&#x2F;strong&gt; 3
+&lt;strong&gt;Explanation:&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;If transactions are in the order [ [3,0],[0,3] ], the minimum money required to complete the transactions is 3.&lt;&#x2F;li&gt;
+&lt;li&gt;If transactions are in the order [ [0,3],[3,0] ], the minimum money required to complete the transactions is 0.
+Thus, starting with money = 3, the transactions can be performed in any order.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;constraints&quot;&gt;Constraints&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;1 &amp;lt;= transactions.length &amp;lt;= $10^5$&lt;&#x2F;li&gt;
+&lt;li&gt;transactions[i].length == 2&lt;&#x2F;li&gt;
+&lt;li&gt;$0 &amp;lt;= cost_i, cashback_i &amp;lt;= 10^9$&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;journey&quot;&gt;Journey&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;sorting&quot;&gt;Sorting&lt;&#x2F;h3&gt;
+&lt;p&gt;if i sort the outer array based on the cash back in ascending order, the order I get will require the most money initially(I think).
+It certainly works on the examples.&lt;&#x2F;p&gt;
+&lt;p&gt;Lets see
+for transactions of [ [4, 1], [3, 3], [5, 7], [9, 2] ]
+when sorted in ascending order of cashback
+sorted transaction = [ [4, 1], [9, 2], [3, 3], [5, 7] ]
+so minimum required cost: x - 4 + 1 - 9 + 2 - 3 + 3 - 5 = 0; x =  15&lt;&#x2F;p&gt;
+&lt;p&gt;after calculating the money for all the permutations of the above transactions&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#eff1f5;color:#4f5b66;&quot;&gt;&lt;code&gt;&lt;span&gt;[0]: ([4, 1], [3, 3], [5, 7], [9, 2]) initial money:  10
+&lt;&#x2F;span&gt;&lt;span&gt;[1]: ([4, 1], [3, 3], [9, 2], [5, 7]) initial money:  15
+&lt;&#x2F;span&gt;&lt;span&gt;[2]: ([4, 1], [5, 7], [3, 3], [9, 2]) initial money:  10
+&lt;&#x2F;span&gt;&lt;span&gt;[3]: ([4, 1], [5, 7], [9, 2], [3, 3]) initial money:  11
+&lt;&#x2F;span&gt;&lt;span&gt;[4]: ([4, 1], [9, 2], [3, 3], [5, 7]) initial money:  15
+&lt;&#x2F;span&gt;&lt;span&gt;[5]: ([4, 1], [9, 2], [5, 7], [3, 3]) initial money:  11
+&lt;&#x2F;span&gt;&lt;span&gt;[6]: ([3, 3], [4, 1], [5, 7], [9, 2]) initial money:  10
+&lt;&#x2F;span&gt;&lt;span&gt;[7]: ([3, 3], [4, 1], [9, 2], [5, 7]) initial money:  15
+&lt;&#x2F;span&gt;&lt;span&gt;[8]: ([3, 3], [5, 7], [4, 1], [9, 2]) initial money:  10
+&lt;&#x2F;span&gt;&lt;span&gt;[9]: ([3, 3], [5, 7], [9, 2], [4, 1]) initial money:  9
+&lt;&#x2F;span&gt;&lt;span&gt;[10]: ([3, 3], [9, 2], [4, 1], [5, 7]) initial money:  15
+&lt;&#x2F;span&gt;&lt;span&gt;[11]: ([3, 3], [9, 2], [5, 7], [4, 1]) initial money:  9
+&lt;&#x2F;span&gt;&lt;span&gt;[12]: ([5, 7], [4, 1], [3, 3], [9, 2]) initial money:  10
+&lt;&#x2F;span&gt;&lt;span&gt;[13]: ([5, 7], [4, 1], [9, 2], [3, 3]) initial money:  11
+&lt;&#x2F;span&gt;&lt;span&gt;[14]: ([5, 7], [3, 3], [4, 1], [9, 2]) initial money:  10
+&lt;&#x2F;span&gt;&lt;span&gt;[15]: ([5, 7], [3, 3], [9, 2], [4, 1]) initial money:  9
+&lt;&#x2F;span&gt;&lt;span&gt;[16]: ([5, 7], [9, 2], [4, 1], [3, 3]) initial money:  11
+&lt;&#x2F;span&gt;&lt;span&gt;[17]: ([5, 7], [9, 2], [3, 3], [4, 1]) initial money:  9
+&lt;&#x2F;span&gt;&lt;span&gt;[18]: ([9, 2], [4, 1], [3, 3], [5, 7]) initial money:  15
+&lt;&#x2F;span&gt;&lt;span&gt;[19]: ([9, 2], [4, 1], [5, 7], [3, 3]) initial money:  11
+&lt;&#x2F;span&gt;&lt;span&gt;[20]: ([9, 2], [3, 3], [4, 1], [5, 7]) initial money:  15
+&lt;&#x2F;span&gt;&lt;span&gt;[21]: ([9, 2], [3, 3], [5, 7], [4, 1]) initial money:  9
+&lt;&#x2F;span&gt;&lt;span&gt;[22]: ([9, 2], [5, 7], [4, 1], [3, 3]) initial money:  11
+&lt;&#x2F;span&gt;&lt;span&gt;[23]: ([9, 2], [5, 7], [3, 3], [4, 1]) initial money:  9
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;The minimum amount of money for any order of transaction is 15 from the above results. Now 15 is returned by many orderings 1, 4, 7, 18, and 20. I don&#x27;t know if this means my algorithm is correct or not but I&#x27;m gonna try it.&lt;&#x2F;p&gt;
+&lt;p&gt;This sorting approach is fundamentally flawed but I&#x27;m gonna list some of the problems I thought there were with the approach that led me to the actual solution.&lt;&#x2F;p&gt;
+&lt;p&gt;First the obvious one. The maximum initial money required could be at any point during the series of transactions and not only at the end. (I didn&#x27;t think why when I was solving it last night., it was very late, otherwise I think I would have reached the solution sooner)
+Okay so I should keep a maximum money that variable and update it only when money is greater than current maximum money. (again should have just thought for a moment why I needed to do this instead of running through hoops to make the solution work)&lt;&#x2F;p&gt;
+&lt;p&gt;So I have the maximum initial money that I need throughout the transactions. This is it, right? Wrong. What about the ones where the cost is 0. Then the transaction is basically giving free cashback no matter if its smaller than the others. (I hadn&#x27;t clocked it still but I&#x27;m getting there) I should just keep these transactions with zero cost at the end so that they don&#x27;t affect the maximum_money.&lt;&#x2F;p&gt;
+&lt;p&gt;&quot;Okay hopefully it works now, I need to sleep&quot; is what I thought but of course it doesn&#x27;t and it didn&#x27;t. Then I became aware of the third type of transactions in this whole thing. The transactions where cost is not 0 but some positive value but the cashback is still greater than cost so  it also decreases the maximum  initial money required and thus should be push to the last.&lt;&#x2F;p&gt;
+&lt;p&gt;I had one final go where I put the transaction  with maximum cost among the negative (negative cost - cashback) at the front of those transactions. It still didn&#x27;t work.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;difference&quot;&gt;Difference&lt;&#x2F;h3&gt;
+&lt;p&gt;And then I realized I didn&#x27;t need to sort the transactions in the first place. Since only the transactions with the positive (in terms of cost) result mattered, I could find the sum of the positive transactions. Since I would have to pay the cost of transaction and then I got the cashback, if I added the highest cashback to that positive sum, then that is the minimum amount of money initially  to complete all of the transactions.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;If&lt;&#x2F;strong&gt; the transactions where cost is less than cashback didn&#x27;t exist, which practically shouldn&#x27;t but the problem constraint  $0 &amp;lt;= cost_i, cashback_i &amp;lt;= 10^9$ doesn&#x27;t say anything about that. So the last step of the positive sum is to negate the effect of the highest cashback since I don&#x27;t get it until I pay the cost of that transaction.&lt;&#x2F;p&gt;
+&lt;p&gt;Now I should include it in if the highest cost among the negative transactions(where cashback &amp;gt; cost) is greater than highest cashback. This lead me to the solution below.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;rust&quot; style=&quot;background-color:#eff1f5;color:#4f5b66;&quot; class=&quot;language-rust &quot;&gt;&lt;code class=&quot;language-rust&quot; data-lang=&quot;rust&quot;&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;impl &lt;&#x2F;span&gt;&lt;span&gt;Solution {
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;pub fn &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8fa1b3;&quot;&gt;minimum_money&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;transactions&lt;&#x2F;span&gt;&lt;span&gt;: Vec&amp;lt;Vec&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;i32&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;&amp;gt;) -&amp;gt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;i64 &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;let mut&lt;&#x2F;span&gt;&lt;span&gt; positive_sum: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;i32 &lt;&#x2F;span&gt;&lt;span&gt;= transactions.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;iter&lt;&#x2F;span&gt;&lt;span&gt;()
+&lt;&#x2F;span&gt;&lt;span&gt;            .&lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;map&lt;&#x2F;span&gt;&lt;span&gt;(|&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;transaction&lt;&#x2F;span&gt;&lt;span&gt;| transaction[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span&gt;] - transaction[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span&gt;])
+&lt;&#x2F;span&gt;&lt;span&gt;            .&lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;filter&lt;&#x2F;span&gt;&lt;span&gt;(|&amp;amp;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;diff&lt;&#x2F;span&gt;&lt;span&gt;| diff &amp;gt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;            .&lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;sum&lt;&#x2F;span&gt;&lt;span&gt;();
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;let mut&lt;&#x2F;span&gt;&lt;span&gt; highest_neg = &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span&gt;;
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;for&lt;&#x2F;span&gt;&lt;span&gt; tran in &amp;amp;transactions {
+&lt;&#x2F;span&gt;&lt;span&gt;            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;if&lt;&#x2F;span&gt;&lt;span&gt; tran[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span&gt;] &amp;lt; tran[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span&gt;] &amp;amp;&amp;amp; tran[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span&gt;] &amp;gt; highest_neg {
+&lt;&#x2F;span&gt;&lt;span&gt;                highest_neg = tran[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span&gt;];
+&lt;&#x2F;span&gt;&lt;span&gt;            }
+&lt;&#x2F;span&gt;&lt;span&gt;        }
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;let mut&lt;&#x2F;span&gt;&lt;span&gt; highest_cashback_index = &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span&gt;;
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;let mut&lt;&#x2F;span&gt;&lt;span&gt; highest_cashback = &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span&gt;;
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;for &lt;&#x2F;span&gt;&lt;span&gt;(i, tran) in transactions.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;iter&lt;&#x2F;span&gt;&lt;span&gt;().&lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;enumerate&lt;&#x2F;span&gt;&lt;span&gt;() {
+&lt;&#x2F;span&gt;&lt;span&gt;            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span&gt;(tran[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span&gt;] &amp;gt; tran[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span&gt;] &amp;amp;&amp;amp; highest_cashback &amp;lt; tran[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span&gt;]) {
+&lt;&#x2F;span&gt;&lt;span&gt;                highest_cashback = tran[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span&gt;];
+&lt;&#x2F;span&gt;&lt;span&gt;                highest_cashback_index = i;
+&lt;&#x2F;span&gt;&lt;span&gt;            }
+&lt;&#x2F;span&gt;&lt;span&gt;        }
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;if&lt;&#x2F;span&gt;&lt;span&gt; highest_cashback &amp;lt; highest_neg {
+&lt;&#x2F;span&gt;&lt;span&gt;            (positive_sum+highest_neg) as &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;i64
+&lt;&#x2F;span&gt;&lt;span&gt;        } &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;else &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;            (positive_sum+highest_cashback) as &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;i64
+&lt;&#x2F;span&gt;&lt;span&gt;        }
+&lt;&#x2F;span&gt;&lt;span&gt;    }
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;It didn&#x27;t work because I forgot to factor in the transactions where cost == cashback. It was very late at night so I went to sleep which I couldn&#x27;t do anyway. I kept thinking about it and not long before I realized about the zero transactions.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;destination&quot;&gt;Destination&lt;&#x2F;h2&gt;
+&lt;p&gt;Each transactions can be classified into two types, positive transactions where cost is greater than cashback and negative ones where cost is equal to or less than cash back.&lt;&#x2F;p&gt;
+&lt;p&gt;Let’s just look at the positive transactions for now—where the cost is more than the cashback. Since we always have to pay more than we get back, the minimum amount of money we need keeps going up with each transaction. But since we get the cashback right after each transaction, the order doesn’t really matter—except for the last one.&lt;&#x2F;p&gt;
+&lt;p&gt;The last transaction is different because we need enough money to cover its cost before we get its cashback. So, the worst possible order—the one that makes us need the most money upfront—is when the transaction with the highest cashback is saved for last. If we got that cashback earlier, it would’ve helped lower the amount of money we needed. But by putting it last, we miss out on that advantage, making us start with more money to complete every transactions.&lt;&#x2F;p&gt;
+&lt;p&gt;For negative transactions, we only need to consider the one with the highest cost. Any other negative transaction would give more cashback than it costs, meaning it would actually reduce the amount of money we need upfront.&lt;&#x2F;p&gt;
+&lt;p&gt;If $M_p$ is the minimum money required for the positive transactions, then adding the most expensive negative transaction with cost $C_n$ means we also need to complete the last positive transaction. Completing the last positive transaction gives us its maximum cashback, $B_p$.&lt;&#x2F;p&gt;
+&lt;p&gt;So, the initial money required in this case would be $M_p + C_n - B_p$. Since we&#x27;re trying to find the worst-case scenario—the order that requires the most money upfront—we need to check if including this negative transaction actually increases the required money or not. If $C_n$ is greater than $B_p$, it makes the starting money go up, meaning it should be included in the worst case. If not, then we can ignore it because it doesn’t increase the initial money required.&lt;&#x2F;p&gt;
+&lt;p&gt;This is the final solution I came up with. It is in rust.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;rust&quot; style=&quot;background-color:#eff1f5;color:#4f5b66;&quot; class=&quot;language-rust &quot;&gt;&lt;code class=&quot;language-rust&quot; data-lang=&quot;rust&quot;&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;pub fn &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8fa1b3;&quot;&gt;minimum_money&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;transactions&lt;&#x2F;span&gt;&lt;span&gt;: Vec&amp;lt;Vec&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;i32&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;&amp;gt;) -&amp;gt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;i64 &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;let mut&lt;&#x2F;span&gt;&lt;span&gt; pos_sum: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;i64 &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span&gt;;
+&lt;&#x2F;span&gt;&lt;span&gt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;let mut&lt;&#x2F;span&gt;&lt;span&gt; max_cb = &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span&gt;;
+&lt;&#x2F;span&gt;&lt;span&gt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;let mut&lt;&#x2F;span&gt;&lt;span&gt; max_neg = &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span&gt;;
+&lt;&#x2F;span&gt;&lt;span&gt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;for&lt;&#x2F;span&gt;&lt;span&gt; tran in transactions {
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;let&lt;&#x2F;span&gt;&lt;span&gt; diff = tran[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span&gt;] - tran[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span&gt;];
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span&gt;(diff &amp;gt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span&gt;) {
+&lt;&#x2F;span&gt;&lt;span&gt;   pos_sum += diff as &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;i64&lt;&#x2F;span&gt;&lt;span&gt;;
+&lt;&#x2F;span&gt;&lt;span&gt;   &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;if&lt;&#x2F;span&gt;&lt;span&gt; max_cb &amp;lt; tran[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span&gt;] {
+&lt;&#x2F;span&gt;&lt;span&gt;    max_cb = tran[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span&gt;];
+&lt;&#x2F;span&gt;&lt;span&gt;   }
+&lt;&#x2F;span&gt;&lt;span&gt;  } &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;else &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;   &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;if&lt;&#x2F;span&gt;&lt;span&gt; max_neg &amp;lt; tran[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span&gt;] {
+&lt;&#x2F;span&gt;&lt;span&gt;    max_neg = tran[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span&gt;];
+&lt;&#x2F;span&gt;&lt;span&gt;   }
+&lt;&#x2F;span&gt;&lt;span&gt;  }
+&lt;&#x2F;span&gt;&lt;span&gt; }
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;if&lt;&#x2F;span&gt;&lt;span&gt; max_cb &amp;lt; max_neg {
+&lt;&#x2F;span&gt;&lt;span&gt;  pos_sum+max_neg as &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;i64
+&lt;&#x2F;span&gt;&lt;span&gt; } &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;else &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;  pos_sum+max_cb as &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;i64
+&lt;&#x2F;span&gt;&lt;span&gt; }
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Hello</title>
+        <published>2025-02-08T00:00:00+00:00</published>
+        <updated>2025-02-08T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              faultypointer
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://faultypointer.github.io/hello/"/>
+        <id>https://faultypointer.github.io/hello/</id>
+        
+        <content type="html" xml:base="https://faultypointer.github.io/hello/">&lt;h2 id=&quot;hello&quot;&gt;Hello&lt;&#x2F;h2&gt;
+&lt;p&gt;Welcome to by 4th? or maybe it&#x27;s 5th? personal site.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Template</title>
+        <published>2014-03-14T00:00:00+00:00</published>
+        <updated>2014-03-14T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              faultypointer
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://faultypointer.github.io/one/"/>
+        <id>https://faultypointer.github.io/one/</id>
+        
+        <content type="html" xml:base="https://faultypointer.github.io/one/">&lt;h1 id=&quot;h1-heading&quot;&gt;h1 Heading&lt;&#x2F;h1&gt;
+&lt;h2 id=&quot;h2-heading&quot;&gt;h2 Heading&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;h3-heading&quot;&gt;h3 Heading&lt;&#x2F;h3&gt;
+&lt;h4 id=&quot;h4-heading&quot;&gt;h4 Heading&lt;&#x2F;h4&gt;
+&lt;h5 id=&quot;h5-heading&quot;&gt;h5 Heading&lt;&#x2F;h5&gt;
+&lt;h6 id=&quot;h6-heading&quot;&gt;h6 Heading&lt;&#x2F;h6&gt;
+&lt;h2 id=&quot;horizontal-rules&quot;&gt;Horizontal Rules&lt;&#x2F;h2&gt;
+&lt;pre style=&quot;background-color:#eff1f5;color:#4f5b66;&quot;&gt;&lt;code&gt;&lt;span&gt;---
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;hr &#x2F;&gt;
+&lt;pre style=&quot;background-color:#eff1f5;color:#4f5b66;&quot;&gt;&lt;code&gt;&lt;span&gt;***
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;emphasis&quot;&gt;Emphasis&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;strong&gt;This is bold text&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;This is bold text&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;em&gt;This is italic text&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;em&gt;This is italic text&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;del&gt;Strikethrough&lt;&#x2F;del&gt;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;blockquotes&quot;&gt;Blockquotes&lt;&#x2F;h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Blockquotes can also be nested...&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;...by using additional greater-than signs right next to each other...&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;...or with spaces between arrows.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;h2 id=&quot;lists&quot;&gt;Lists&lt;&#x2F;h2&gt;
+&lt;p&gt;Unordered&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Create a list by starting a line with &lt;code&gt;+&lt;&#x2F;code&gt;, &lt;code&gt;-&lt;&#x2F;code&gt;, or &lt;code&gt;*&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Sub-lists are made by indenting 2 spaces:
+&lt;ul&gt;
+&lt;li&gt;Marker character change forces new list start:
+&lt;ul&gt;
+&lt;li&gt;Ac tristique libero volutpat at&lt;&#x2F;li&gt;
+&lt;li&gt;Facilisis in pretium nisl aliquet&lt;&#x2F;li&gt;
+&lt;li&gt;Nulla volutpat aliquam velit&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Very easy!&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Ordered&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Lorem ipsum dolor sit amet&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Consectetur adipiscing elit&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Integer molestie lorem at massa&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;You can use sequential numbers...&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;...or keep all the numbers as &lt;code&gt;1.&lt;&#x2F;code&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;Start numbering with offset:&lt;&#x2F;p&gt;
+&lt;ol start=&quot;57&quot;&gt;
+&lt;li&gt;foo&lt;&#x2F;li&gt;
+&lt;li&gt;bar&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;code&quot;&gt;Code&lt;&#x2F;h2&gt;
+&lt;p&gt;Inline &lt;code&gt;code&lt;&#x2F;code&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Indented code&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#eff1f5;color:#4f5b66;&quot;&gt;&lt;code&gt;&lt;span&gt;&#x2F;&#x2F; Some comments
+&lt;&#x2F;span&gt;&lt;span&gt;line 1 of code
+&lt;&#x2F;span&gt;&lt;span&gt;line 2 of code
+&lt;&#x2F;span&gt;&lt;span&gt;line 3 of code
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Block code &quot;fences&quot;&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#eff1f5;color:#4f5b66;&quot;&gt;&lt;code&gt;&lt;span&gt;Sample text here...
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Syntax highlighting&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;js&quot; style=&quot;background-color:#eff1f5;color:#4f5b66;&quot; class=&quot;language-js &quot;&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;var &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8fa1b3;&quot;&gt;foo &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;function &lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;bar&lt;&#x2F;span&gt;&lt;span&gt;) {
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;return &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;bar&lt;&#x2F;span&gt;&lt;span&gt;++;
+&lt;&#x2F;span&gt;&lt;span&gt;};
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;console&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;log&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#8fa1b3;&quot;&gt;foo&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;5&lt;&#x2F;span&gt;&lt;span&gt;));
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;tables&quot;&gt;Tables&lt;&#x2F;h2&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Option&lt;&#x2F;th&gt;&lt;th&gt;Description&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;data&lt;&#x2F;td&gt;&lt;td&gt;path to data files to supply the data that will be passed into templates.&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;engine&lt;&#x2F;td&gt;&lt;td&gt;engine to be used for processing templates. Handlebars is the default.&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;ext&lt;&#x2F;td&gt;&lt;td&gt;extension to be used for dest files.&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;p&gt;Right aligned columns&lt;&#x2F;p&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th style=&quot;text-align: right&quot;&gt;Option&lt;&#x2F;th&gt;&lt;th style=&quot;text-align: right&quot;&gt;Description&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td style=&quot;text-align: right&quot;&gt;data&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: right&quot;&gt;path to data files to supply the data that will be passed into templates.&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td style=&quot;text-align: right&quot;&gt;engine&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: right&quot;&gt;engine to be used for processing templates. Handlebars is the default.&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td style=&quot;text-align: right&quot;&gt;ext&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: right&quot;&gt;extension to be used for dest files.&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;h2 id=&quot;links&quot;&gt;Links&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;a href=&quot;http:&#x2F;&#x2F;dev.nodeca.com&quot;&gt;link text&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;http:&#x2F;&#x2F;nodeca.github.io&#x2F;pica&#x2F;demo&#x2F;&quot; title=&quot;title text!&quot;&gt;link with title&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Autoconverted link &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;nodeca&#x2F;pica&quot;&gt;https:&#x2F;&#x2F;github.com&#x2F;nodeca&#x2F;pica&lt;&#x2F;a&gt; (enable linkify to see)&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;images&quot;&gt;Images&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;octodex.github.com&#x2F;images&#x2F;minion.png&quot; alt=&quot;Minion&quot; &#x2F;&gt;
+&lt;img src=&quot;https:&#x2F;&#x2F;octodex.github.com&#x2F;images&#x2F;stormtroopocat.jpg&quot; alt=&quot;Stormtroopocat&quot; title=&quot;The Stormtroopocat&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Like links, Images also have a footnote style syntax&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;octodex.github.com&#x2F;images&#x2F;dojocat.jpg&quot; alt=&quot;Alt text&quot; title=&quot;The Dojocat&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;With a reference later in the document defining the URL location:&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>
