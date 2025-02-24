@@ -46,6 +46,7 @@ body {
   line-height: var(--font-line-height);
   font-style:var(--font-style);
   width: min(95%, var(--column-width));
+  overflow-wrap: break-word;
 }
 
 a {
