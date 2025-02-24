@@ -3,4 +3,4 @@ title = "Now"
 +++
 
 
-reading about slash pages
+reading the [Ffmpeg school of assembly](https://github.com/FFmpeg/asm-lessons) lessons.
