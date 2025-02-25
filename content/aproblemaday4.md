@@ -86,7 +86,7 @@ impl Solution {
 Well this is a first.
 When I chose this question, I didn't really think much. I just saw matrix and inplace and thought to myself. well this should be interesting. Well it was interesting for a minute.
 
-I don't know who labelled this problem as medium. The [[aproblemaday2]] problem was medium and in hindsight It was not that difficult but it did require me to think about it the problem for a bit. I'm still doubting if I did it the right way or not.
+I don't know who labelled this problem as medium. The [A Problem a Day 2](./aproblemaday2.md) problem was medium and in hindsight It was not that difficult but it did require me to think about it the problem for a bit. I'm still doubting if I did it the right way or not.
 
 Anyway. enough about this shitass of a problem.
 how's life?
