@@ -2,5 +2,5 @@
 title = "Now"
 +++
 
-
-reading the [Ffmpeg school of assembly](https://github.com/FFmpeg/asm-lessons) lessons.
+Taking a break from writing here (which was entirely a problem a day) until our project defence. 
+can't focus
