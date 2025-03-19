@@ -16,5 +16,21 @@ My point is that even if I don't believe any of the paranormal stuff to be real,
 So, How can that be? How can I be scared of something I definitely believe to be not real? Well I don't know. Maybe I'm pretending to not believe in those things.[_I'm not but still lets entertain the idea_] Maybe subconsciously believing them to be fake helps me cope with it.[_again cope with fucking what but lets pretend_] Mayb-. Okay, you know what. I'm running out of ridiculous reasons for me to be faking about not believing in all this stuff. So here goes. **I absolutely one hundred precent do not believe ghosts or any other paranormal stuff(except maybe the aliens related ones) exists in any form what so ever.**[_While we are at it, I also don't believe in afterlife. I think there is absolutely nothing after death. So live your life to the fullest_] 
 And you can quote me on that.
 
-After all that foreplay, lets talk about the title. `I Love Horror Movies`.
-It all started with those shitty Indian horror movies. *Veerana, Khooni Panja* and all others that I forgot the names of. They are all shitty movies by today's standrad but they made me fall in love with the horror genre.
+After all that foreplay, lets finally talk about the title. `I Love Horror Movies`.
+It all started with those shitty Indian horror movies. *Veerana, Khooni Panja* and all others that I forgot the names of. They are all shitty movies by today's standard but they made me fall in love with the horror genre.
+## Early Days
+[_surprise!! Headings. Nice right?_]
+My introduction to Hollywood was probably from the horror movies too. These are the movies I watched in my school days (probably class 6, 7) which is why I can't name a single one of the top off my head except Conjuring. I do remember what I didn't watch: Insidious, Wrong Turn, Paranormal activities.[_I still haven't watched them by the way. Never will. I think the time has passed on these ones._] I used to love zombie movies like Train to Busan and [_yet again_] all others that I can't remember. As you can see, I don't really remember much from this time.
+
+## Welcome to the internet
+Finally wifi in the house[_well technically wifi in the rented room but still wifi!!_]. It was around the time I discovered reddit so that meant I had a lot more and good movie recommendations. It was also around the time I started to watch TV series which is probably why I watched horror movies which were a part of a cinematic universe. Or maybe It was because of MCU.
+I don't really remember much about Halloween and don't really care. I remember Michael Myers and his mask. I remember some other stuff which I not entirely sure is from Halloween movies like Monica from friends begin in one of the newer ones. I checked and it was not Halloween. It was Scream.
+
+I remember the first Freddie Kruger movie quite well. Although I had to check what the name was. It was more memorable than the Halloween ones. I still know the overall summary. Guy gets burned because of misunderstanding? [_maybe he was actually a pedo or murderer. can't remember_]. Haunts the chidrens of the people who were responsible? for his death.
+
+I watched almost all of the saw movies, I think. It got progressively worse.
+I am like 99 percent sure I watched atleast some of the Friday the 13th movies but I can't remember anything. Literally nothing comes to my mind.[_And It doesn't even make sense. I love friday the 13th. The date. Not only is it the 'horror' date but it is also the day I was almost born. If only I was 10 minutes early. Saturday the 14th. 00:10. Mark the date. And the time._]
+Scream was a good twist on the slasher genre. For the first one. Then it got repeatative. It was still fun.
+I never got into the Cunjuring franchise. I watched the first conjuring and the annabell. Maybe I watched the second conjuring. Never got into the nun movies.
+Finally the two of my favourite horror movie franchise: Child's Play and Final Destination.
+Like saw, the chucky movies did get shittier but I still enjoyed them very much. Same with Final Destination. I was genuinely excited when I heard about the chucky series. I'm also excited [_not much tho_] about the new Final Destination movie thats about to come.
