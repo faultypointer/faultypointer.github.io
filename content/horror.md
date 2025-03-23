@@ -1,6 +1,6 @@
 +++
 title = "I Love Horror Movies"
-date = 2025-03-18
+date = 2025-03-23
 [taxonomies]
 tags = ["horror"]
 +++
