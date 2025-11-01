@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="utf-8">
+    <title>faulty:carboxide</title>
+    <link rel="stylesheet" href="/style.css">
+
+    <link rel="webmention" href="https://webmention.io/faulty.carboxi.de/webmention" />
+
+    
+      <link rel="alternate" type="application/rss+xml" title="RSS" href="https://faulty.carboxi.de/rss.xml">
+    
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 80 85%22><text y=%22.9em%22 font-size=%2290%22 fill=%22%23a1a1a1%22>⌬</text></svg>">
+</head>
+
+<body>
+    
+
+
+
+
+
+
+
+<div>
+    <div class="h-entry">
+
+    
+  <div class="p-author h-card" style="display: none;">
+    <a class="u-url" href="https:&#x2F;&#x2F;faulty.carboxi.de" rel="me">
+      <a class="u-email" href="mailto:faultypointer@proton.me" rel="me">
+      <img class="u-photo" src="&#x2F;thumbnail.png" alt="faulty">
+      <span class="p-name">faulty</span>
+      <p class="p-note">book</p>
+    </a>
+  </div>
+
+
+    <h1 class="p-name"><a href="https:&#x2F;&#x2F;faulty.carboxi.de">A problem a day: Day 4</a></h1>
+
+        <div class="e-content p-content">
+            
+            <h2 id="origin">Origin</h2>
+<p>url: <a href="https://leetcode.com/problems/rotate-image/description/">Leetcode problem 48</a></p>
+<h3 id="problem">Problem</h3>
+<p>You are given an <code>n x n</code> 2D <code>matrix</code> representing an image, rotate the image by <strong>90</strong> degrees (clockwise).</p>
+<p>You have to rotate the image <em>in-place</em>, which means you have to modify the input 2D matrix directly. <strong>DO NOT</strong> allocate another 2D matrix and do the rotation.</p>
+<h3 id="examples">Examples</h3>
+<h4 id="example-1">Example 1</h4>
+<pre data-lang="c" style="background-color:#2e3440;color:#d8dee9;" class="language-c "><code class="language-c" data-lang="c"><span><em class="inner-voice">                                    <em class="inner-voice">
+</span><span><em class="inner-voice"></span><span style="color:#b48ead;">1</span><span style="color:#eceff4;">, </span><span style="color:#b48ead;">2</span><span style="color:#eceff4;">, </span><span style="color:#b48ead;">3</span><span></em></span><span style="color:#eceff4;">,        </span><span style="color:#81a1c1;">---&gt;               </span><span><em class="inner-voice"></span><span style="color:#b48ead;">7</span><span style="color:#eceff4;">, </span><span style="color:#b48ead;">4</span><span style="color:#eceff4;">, </span><span style="color:#b48ead;">1</span><span></em></span><span style="color:#eceff4;">,
+</span><span><em class="inner-voice"></span><span style="color:#b48ead;">4</span><span style="color:#eceff4;">, </span><span style="color:#b48ead;">5</span><span style="color:#eceff4;">, </span><span style="color:#b48ead;">6</span><span></em></span><span style="color:#eceff4;">,        </span><span style="color:#81a1c1;">---&gt;               </span><span><em class="inner-voice"></span><span style="color:#b48ead;">8</span><span style="color:#eceff4;">, </span><span style="color:#b48ead;">5</span><span style="color:#eceff4;">, </span><span style="color:#b48ead;">2</span><span></em></span><span style="color:#eceff4;">,
+</span><span><em class="inner-voice"></span><span style="color:#b48ead;">7</span><span style="color:#eceff4;">, </span><span style="color:#b48ead;">8</span><span style="color:#eceff4;">, </span><span style="color:#b48ead;">9</span><span></em>         </span><span style="color:#81a1c1;">---&gt;               </span><span><em class="inner-voice"></span><span style="color:#b48ead;">9</span><span style="color:#eceff4;">, </span><span style="color:#b48ead;">6</span><span style="color:#eceff4;">, </span><span style="color:#b48ead;">3</span><span></em></span><span style="color:#eceff4;">,
+</span><span></em>                                    </em>
+</span></code></pre>
+<p><strong>Input:</strong> matrix = <em class="inner-voice"> <em class="inner-voice">1,2,3</em>,<em class="inner-voice">4,5,6</em>,<em class="inner-voice">7,8,9</em> </em>
+<strong>Output:</strong> <em class="inner-voice"> <em class="inner-voice">7,4,1</em>,<em class="inner-voice">8,5,2</em>,<em class="inner-voice">9,6,3</em> </em></p>
+<h4 id="example-2">Example 2</h4>
+<pre data-lang="c" style="background-color:#2e3440;color:#d8dee9;" class="language-c "><code class="language-c" data-lang="c"><span>Original Matrix</span><span style="color:#81a1c1;">:</span><span>               Rotated </span><span style="color:#88c0d0;">Matrix </span><span>(</span><span style="color:#b48ead;">90</span><span> degrees clockwise)</span><span style="color:#81a1c1;">:
+</span><span style="color:#81a1c1;">|  </span><span style="color:#b48ead;">5 </span><span style="color:#81a1c1;">|  </span><span style="color:#b48ead;">1 </span><span style="color:#81a1c1;">|  </span><span style="color:#b48ead;">9 </span><span style="color:#81a1c1;">| </span><span style="color:#b48ead;">11 </span><span style="color:#81a1c1;">|          | </span><span style="color:#b48ead;">15 </span><span style="color:#81a1c1;">| </span><span style="color:#b48ead;">13 </span><span style="color:#81a1c1;">|  </span><span style="color:#b48ead;">2 </span><span style="color:#81a1c1;">|  </span><span style="color:#b48ead;">5 </span><span style="color:#81a1c1;">|
+</span><span style="color:#81a1c1;">|  </span><span style="color:#b48ead;">2 </span><span style="color:#81a1c1;">|  </span><span style="color:#b48ead;">4 </span><span style="color:#81a1c1;">|  </span><span style="color:#b48ead;">8 </span><span style="color:#81a1c1;">| </span><span style="color:#b48ead;">10 </span><span style="color:#81a1c1;">|          | </span><span style="color:#b48ead;">14 </span><span style="color:#81a1c1;">|  </span><span style="color:#b48ead;">3 </span><span style="color:#81a1c1;">|  </span><span style="color:#b48ead;">4 </span><span style="color:#81a1c1;">|  </span><span style="color:#b48ead;">1 </span><span style="color:#81a1c1;">|
+</span><span style="color:#81a1c1;">| </span><span style="color:#b48ead;">13 </span><span style="color:#81a1c1;">|  </span><span style="color:#b48ead;">3 </span><span style="color:#81a1c1;">|  </span><span style="color:#b48ead;">6 </span><span style="color:#81a1c1;">|  </span><span style="color:#b48ead;">7 </span><span style="color:#81a1c1;">|          | </span><span style="color:#b48ead;">12 </span><span style="color:#81a1c1;">|  </span><span style="color:#b48ead;">6 </span><span style="color:#81a1c1;">|  </span><span style="color:#b48ead;">8 </span><span style="color:#81a1c1;">|  </span><span style="color:#b48ead;">9 </span><span style="color:#81a1c1;">|
+</span><span style="color:#81a1c1;">| </span><span style="color:#b48ead;">15 </span><span style="color:#81a1c1;">| </span><span style="color:#b48ead;">14 </span><span style="color:#81a1c1;">| </span><span style="color:#b48ead;">12 </span><span style="color:#81a1c1;">| </span><span style="color:#b48ead;">16 </span><span style="color:#81a1c1;">|          | </span><span style="color:#b48ead;">16 </span><span style="color:#81a1c1;">|  </span><span style="color:#b48ead;">7 </span><span style="color:#81a1c1;">| </span><span style="color:#b48ead;">10 </span><span style="color:#81a1c1;">| </span><span style="color:#b48ead;">11 </span><span style="color:#81a1c1;">|
+</span><span>
+</span></code></pre>
+<h3 id="constraints">Constraints</h3>
+<ul>
+<li><code>n == matrix.length == matrix<em class="inner-voice">i</em>.length</code></li>
+<li><code>1 &lt;= n &lt;= 20</code></li>
+<li><code>-1000 &lt;= matrix<em class="inner-voice">i</em><em class="inner-voice">j</em> &lt;= 1000</code></li>
+</ul>
+<h2 id="journey">Journey</h2>
+<p>In place rotation.
+Is there a trap here somewhere or is it the issue of time.
+cause I feel like you just reverse the rows and then transpose the resulting matrix and you get the 90 degree rotation</p>
+<p>or does this not count as in-place. im not creating another 2d matrix so it must count right.</p>
+<p>well it did work.</p>
+<pre data-lang="rust" style="background-color:#2e3440;color:#d8dee9;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#81a1c1;">impl </span><span>Solution {
+</span><span>    </span><span style="color:#81a1c1;">pub fn </span><span style="color:#88c0d0;">rotate</span><span>(matrix</span><span style="color:#eceff4;">: </span><span style="color:#81a1c1;">&amp;mut </span><span style="color:#8fbcbb;">Vec</span><span>&lt;</span><span style="color:#8fbcbb;">Vec</span><span>&lt;</span><span style="color:#81a1c1;">i32</span><span>&gt;&gt;) {
+</span><span>        </span><span style="color:#81a1c1;">let</span><span> n </span><span style="color:#81a1c1;">=</span><span> matrix</span><span style="color:#81a1c1;">.</span><span style="color:#88c0d0;">len</span><span>()</span><span style="color:#eceff4;">;
+</span><span>        </span><span style="color:#81a1c1;">let mut</span><span> temp</span><span style="color:#eceff4;">: </span><span style="color:#81a1c1;">i32 = </span><span style="color:#b48ead;">0</span><span style="color:#eceff4;">;
+</span><span>        </span><span style="color:#81a1c1;">for</span><span> i </span><span style="color:#81a1c1;">in </span><span style="color:#b48ead;">0</span><span style="color:#81a1c1;">..</span><span>n</span><span style="color:#81a1c1;">/</span><span style="color:#b48ead;">2 </span><span>{
+</span><span>            </span><span style="color:#81a1c1;">for</span><span> j </span><span style="color:#81a1c1;">in </span><span style="color:#b48ead;">0</span><span style="color:#81a1c1;">..</span><span>n {
+</span><span>                temp </span><span style="color:#81a1c1;">=</span><span> matrix<em class="inner-voice">i</em><em class="inner-voice">j</em></span><span style="color:#eceff4;">;
+</span><span>                matrix<em class="inner-voice">i</em><em class="inner-voice">j</em> </span><span style="color:#81a1c1;">=</span><span> matrix<em class="inner-voice">n</span><span style="color:#81a1c1;">-</span><span style="color:#b48ead;">1</span><span style="color:#81a1c1;">-</span><span>i</em><em class="inner-voice">j</em></span><span style="color:#eceff4;">;
+</span><span>                matrix<em class="inner-voice">n</span><span style="color:#81a1c1;">-</span><span style="color:#b48ead;">1</span><span style="color:#81a1c1;">-</span><span>i</em><em class="inner-voice">j</em> </span><span style="color:#81a1c1;">=</span><span> temp</span><span style="color:#eceff4;">;
+</span><span>            }
+</span><span>        }
+</span><span>        </span><span style="color:#81a1c1;">for</span><span> i </span><span style="color:#81a1c1;">in </span><span style="color:#b48ead;">0</span><span style="color:#81a1c1;">..</span><span>n {
+</span><span>            </span><span style="color:#81a1c1;">for</span><span> j </span><span style="color:#81a1c1;">in</span><span> i</span><span style="color:#81a1c1;">..</span><span>n {
+</span><span>                temp </span><span style="color:#81a1c1;">=</span><span> matrix<em class="inner-voice">i</em><em class="inner-voice">j</em></span><span style="color:#eceff4;">;
+</span><span>                matrix<em class="inner-voice">i</em><em class="inner-voice">j</em> </span><span style="color:#81a1c1;">=</span><span> matrix<em class="inner-voice">j</em><em class="inner-voice">i</em></span><span style="color:#eceff4;">;
+</span><span>                matrix<em class="inner-voice">j</em><em class="inner-voice">i</em> </span><span style="color:#81a1c1;">=</span><span> temp</span><span style="color:#eceff4;">;
+</span><span>            }
+</span><span>        }
+</span><span>    }
+</span><span>}
+</span></code></pre>
+<h2 id="destination">Destination</h2>
+<p>Well this is a first.
+When I chose this question, I didn't really think much. I just saw matrix and inplace and thought to myself. well this should be interesting. Well it was interesting for a minute.</p>
+<p>I don't know who labelled this problem as medium. The <a href="https://faulty.carboxi.de/aproblemaday4/./aproblemaday2.md">A Problem a Day 2</a> problem was medium and in hindsight It was not that difficult but it did require me to think about it the problem for a bit. I'm still doubting if I did it the right way or not.</p>
+<p>Anyway. enough about this shitass of a problem.
+how's life?</p>
+<p>have you heard about mersenne prime. Now they very interesting. I might have a post coming up about it (spoilers).</p>
+<p>so what do i add. It hasn't even crossed the 500 words. Its currenly at 407 words. wait no 408. wow that jumped to 411. 416, 417, 418, 419, 421. aha finally caught it.
+dammit it jumped to 425 again. yes this is whats happening today.
+don't blame me. blame the question. <em class="inner-voice"><em>seriously questioning what am i doing?</em></em></p>
+<p>wowowowoooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo</p>
+<p>did you know I stopped reading the <a href="https://github.com/FFmpeg/asm-lessons">Ffmpeg school of assembly</a> to do this question. I was like okay there are only three lessons and I have completed the first one so let me stop and do the a problem a day thing.</p>
+<p>two words.
+<img src="/images/apad4-words.png" alt="word count of this note in obsidian" />
+bye.</p>
+
+        </div>
+
+        <div class="date">
+          
+              <time class="dt-published" datetime="2025-02-24T00:00:00Z">
+                  February 24, 2025
+              </time>
+          
+        </div>
+            
+        <div class="tag">
+          
+              
+                  <p class="u-category">algorithm</p>
+              
+          
+        </div>
+    </div>
+</div>
+
+<div class="spacing"><div>
+
+
+
+
+
+
+
+    
+    
+    
+    
+      
+    
+
+    
+    
+    
+    
+      
+    
+
+
+
+
+
+
+
+  <section class="next">
+      <h2>Wondering?</h2>
+      <div><p>Maybe explore my archives and send me a <a href="https://indieweb.org/Webmention">webmention</a>. Follow the site using <a href="https://faulty.carboxi.de/rss.xml">RSS</a>. Send me your blog and I’ll read it. <em class="inner-voice">That is, if you know how to contact me. :p</em></p></div>
+  </section>
+
+
+<div class="spacing"><div>
+
+<section>
+  
+  
+  
+  
+  
+  <div>
+    <h2 class="latest-month-header">Latest Posts</h2>
+    
+      
+        
+        
+        
+          
+        
+        <article class="listing latest-month-post">
+          <a href="https://faulty.carboxi.de/organizationandmanagement/">Organization and Management</a>
+          <span class="separator"></span>
+          <time datetime="2025-07-21">
+            21<sup>st</sup>
+          </time>
+        </article>
+      
+    
+      
+        
+        
+        
+        <article class="listing latest-month-post">
+          <a href="https://faulty.carboxi.de/whatsgoingon/">Whats Going On</a>
+          <span class="separator"></span>
+          <time datetime="2025-07-15">
+            15<sup>th</sup>
+          </time>
+        </article>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  
+
+  <div>
+    <h3>Posts from February 2025</h3>
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+        
+        
+        <article class="listing latest-month-post ">
+          <a href="https://faulty.carboxi.de/aproblemaday5/">A problem a day: Day 5</a>
+          <span class="separator"></span>
+          <time datetime="2025-02-25">
+            25<sup>th</sup>
+          </time>
+        </article>
+      
+    
+      
+        
+        
+        
+        <article class="listing latest-month-post current-post">
+          <a href="https://faulty.carboxi.de/aproblemaday4/">A problem a day: Day 4</a>
+          <span class="separator"></span>
+          <time datetime="2025-02-24">
+            24<sup>th</sup>
+          </time>
+        </article>
+      
+    
+      
+        
+        
+        
+          
+        
+        <article class="listing latest-month-post ">
+          <a href="https://faulty.carboxi.de/aproblemaday3/">A problem a day: Day 3</a>
+          <span class="separator"></span>
+          <time datetime="2025-02-23">
+            23<sup>rd</sup>
+          </time>
+        </article>
+      
+    
+      
+        
+        
+        
+          
+        
+        <article class="listing latest-month-post ">
+          <a href="https://faulty.carboxi.de/aproblemaday2/">A problem a day: Day 2</a>
+          <span class="separator"></span>
+          <time datetime="2025-02-22">
+            22<sup>nd</sup>
+          </time>
+        </article>
+      
+    
+      
+        
+        
+        
+        <article class="listing latest-month-post ">
+          <a href="https://faulty.carboxi.de/aproblemaday/">A problem a day: Day 1</a>
+          <span class="separator"></span>
+          <time datetime="2025-02-20">
+            20<sup>th</sup>
+          </time>
+        </article>
+      
+    
+      
+        
+        
+        
+        <article class="listing latest-month-post ">
+          <a href="https://faulty.carboxi.de/hello/">Hello</a>
+          <span class="separator"></span>
+          <time datetime="2025-02-08">
+            8<sup>th</sup>
+          </time>
+        </article>
+      
+    
+      
+    
+  </div>
+
+
+  
+  <details class="previous-months-accordion">
+    <summary>Archives</summary>
+    
+    
+    
+    
+      
+      
+      
+      
+      
+        
+        
+          <div class="date-header">
+            
+              <span class="year-header">2025</span>
+              
+            
+            
+              <span class="month-header">July</span>
+              
+            
+          </div>
+        
+        
+        
+        
+        
+          
+        
+        <article class="listing">
+          <a href="https://faulty.carboxi.de/organizationandmanagement/">Organization and Management</a>
+          <span class="separator"></span>
+          <time datetime="2025-07-21">
+            21<sup>st</sup>
+          </time>
+        </article>
+      
+    
+      
+      
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        <article class="listing">
+          <a href="https://faulty.carboxi.de/whatsgoingon/">Whats Going On</a>
+          <span class="separator"></span>
+          <time datetime="2025-07-15">
+            15<sup>th</sup>
+          </time>
+        </article>
+      
+    
+      
+      
+      
+      
+      
+        
+        
+          <div class="date-header">
+            
+              <span></span> 
+            
+            
+              <span class="month-header">April</span>
+              
+            
+          </div>
+        
+        
+        
+        
+        
+        <article class="listing">
+          <a href="https://faulty.carboxi.de/goingallin/">Going All In</a>
+          <span class="separator"></span>
+          <time datetime="2025-04-10">
+            10<sup>th</sup>
+          </time>
+        </article>
+      
+    
+      
+      
+      
+      
+      
+        
+        
+          <div class="date-header">
+            
+              <span></span> 
+            
+            
+              <span class="month-header">March</span>
+              
+            
+          </div>
+        
+        
+        
+        
+        
+          
+        
+        <article class="listing">
+          <a href="https://faulty.carboxi.de/horror/">I Love Horror Movies</a>
+          <span class="separator"></span>
+          <time datetime="2025-03-23">
+            23<sup>rd</sup>
+          </time>
+        </article>
+      
+    
+      
+      
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        <article class="listing">
+          <a href="https://faulty.carboxi.de/learning/">I love learning things.</a>
+          <span class="separator"></span>
+          <time datetime="2025-03-09">
+            9<sup>th</sup>
+          </time>
+        </article>
+      
+    
+      
+      
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        <article class="listing">
+          <a href="https://faulty.carboxi.de/adhd/">I Do Have Mouth, and Still I Can&#x27;t Scream</a>
+          <span class="separator"></span>
+          <time datetime="2025-03-07">
+            7<sup>th</sup>
+          </time>
+        </article>
+      
+    
+      
+      
+      
+      
+      
+    
+      
+      
+      
+      
+      
+    
+      
+      
+      
+      
+      
+    
+      
+      
+      
+      
+      
+    
+      
+      
+      
+      
+      
+    
+      
+      
+      
+      
+      
+    
+      
+      
+      
+      
+      
+        
+        
+          <div class="date-header">
+            
+              <span class="year-header">2014</span>
+              
+            
+            
+          </div>
+        
+        
+        
+        
+        
+        <article class="listing">
+          <a href="https://faulty.carboxi.de/one/">Template</a>
+          <span class="separator"></span>
+          <time datetime="2014-03-14">
+            14<sup>th</sup>
+          </time>
+        </article>
+      
+    
+  </details>
+</section>
+
+
+</body>
+
+<footer>
+  
+  <p>
+  <a href="/" >Main</a>
+  <a href="/rss.xml">Feed</a>
+  <a href="/author" >Author</a>
+  <a href="/nexus" >Nexus</a>
+  <a href="/now" >Now</a>
+  </p>
+  
+</footer>
+</html>
