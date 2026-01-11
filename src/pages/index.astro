@@ -1,21 +1,25 @@
 ---
-
+import "../styles/global.css"
+import Header from "../components/Header.astro"
+import Footer from "../components/Footer.astro"
 ---
 
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image" href="/favicon.png" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>The Fault In My Writings</title>
 	</head>
 	<body>
 		<h1>The Fault In My Writings.</h1>
 
-		<a href="/">Home</a>
-		<a href="/about/">About</a>
+		<Header />
 
+		<h2>Posts:</h2>
+		<a href="/posts/hello-astro">Hello Astro</a>
 
+		<Footer />
 	</body>
 </html>
