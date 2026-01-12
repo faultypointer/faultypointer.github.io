@@ -1,9 +1,11 @@
 ---
+// src/components/Navigation.astro
 const currentPath = Astro.url.pathname;
 
 const navItems = [
   { href: "/", label: "Home" },
   { href: "/posts/", label: "Posts" },
+  { href: "/series/", label: "Series" },
   { href: "/about/", label: "About" },
 ];
 

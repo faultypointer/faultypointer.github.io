@@ -1,0 +1,52 @@
+---
+// src/pages/series/[series]/[part].astro
+import { getCollection, getEntry, type CollectionEntry } from "astro:content";
+import SeriesPost from "../../../layouts/SeriesPost.astro";
+
+export async function getStaticPaths() {
+  const allParts = await getCollection("series");
+  
+  return allParts.map((part) => {
+    const [seriesSlug, fileName] = part.id.split('/');
+    const partSlug = fileName.replace(/\.md$/, '');
+    
+    return {
+      params: { 
+        series: seriesSlug,
+        part: partSlug,
+      },
+      props: { part },
+    };
+  });
+}
+
+const { part } = Astro.props;
+const [seriesSlug] = part.id.split('/');
+
+// Get series metadata
+const seriesMeta = await getEntry('series-meta', `${seriesSlug}/_meta`);
+
+// Get all parts in this series for navigation
+const allParts = await getCollection("series");
+const seriesParts = allParts
+  .filter(p => p.id.startsWith(`${seriesSlug}/`))
+  .sort((a, b) => a.data.part - b.data.part);
+
+// Find previous and next parts
+const currentIndex = seriesParts.findIndex(p => p.data.part === part.data.part);
+const prevPart = currentIndex > 0 ? seriesParts[currentIndex - 1] : null;
+const nextPart = currentIndex < seriesParts.length - 1 ? seriesParts[currentIndex + 1] : null;
+
+const { Content } = await part.render();
+---
+
+<SeriesPost 
+  {...part.data}
+  seriesTitle={seriesMeta?.data.title || seriesSlug}
+  seriesSlug={seriesSlug}
+  allParts={seriesParts}
+  prevPart={prevPart}
+  nextPart={nextPart}
+>
+  <Content />
+</SeriesPost>

@@ -1,0 +1,216 @@
+---
+// src/pages/series/index.astro
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+// Get all series metadata
+const allSeriesMeta = await getCollection("series-meta", ({ data }) => {
+  return data.draft !== true;
+});
+
+// Get all series parts to count and get dates
+const allSeriesParts = await getCollection("series", ({ data }) => {
+  return data.draft !== true;
+});
+
+// Helper to extract series slug from entry id (e.g., "learning-riscv-assembly/_meta" -> "learning-riscv-assembly")
+function getSeriesSlug(id: string): string {
+  return id.replace(/\.md$/, "");;
+}
+
+// Create series list with metadata
+const seriesList = allSeriesMeta.map((meta) => {
+  const seriesSlug = getSeriesSlug(meta.id);
+  
+  // Get all parts for this series
+  const parts = allSeriesParts.filter(part => 
+    getSeriesSlug(part.id) === seriesSlug
+  ).sort((a, b) => a.data.part - b.data.part);
+  
+  // Get last update date
+  const lastUpdate = parts.length > 0 
+    ? parts.reduce((latest, part) => 
+        part.data.date > latest ? part.data.date : latest, 
+        parts[0].data.date
+      )
+    : new Date();
+  
+  return {
+    slug: seriesSlug,
+    title: meta.data.title,
+    description: meta.data.description,
+    tags: meta.data.tags,
+    partCount: parts.length,
+    lastUpdate,
+  };
+}).sort((a, b) => b.lastUpdate.valueOf() - a.lastUpdate.valueOf());
+---
+
+<BaseLayout 
+  title="Series | The Fault In My Writings"
+  description="Multi-part series on programming, systems, and more."
+>
+  <div class="series-page">
+    <header class="page-header">
+      <h1>Series</h1>
+      <p class="subtitle">
+        Multi-part deep dives into topics I'm exploring
+      </p>
+    </header>
+
+    <div class="series-grid">
+      {seriesList.map((series) => {
+        const formattedDate = series.lastUpdate.toLocaleDateString("en-US", {
+          year: "numeric",
+          month: "long",
+        });
+        
+        return (
+          <article class="series-card">
+            <h2>
+              <a href={`/series/${series.slug}`}>{series.title}</a>
+            </h2>
+            <p class="description">{series.description}</p>
+            <div class="series-meta">
+              <span class="part-count">{series.partCount} {series.partCount === 1 ? 'part' : 'parts'}</span>
+              <span class="separator">·</span>
+              <time>Updated {formattedDate}</time>
+            </div>
+            {series.tags.length > 0 && (
+              <div class="tags">
+                {series.tags.slice(0, 4).map((tag) => (
+                  <span class="tag">#{tag}</span>
+                ))}
+              </div>
+            )}
+          </article>
+        );
+      })}
+    </div>
+
+    {seriesList.length === 0 && (
+      <div class="empty-state">
+        <p>No series yet. Check back soon!</p>
+      </div>
+    )}
+  </div>
+</BaseLayout>
+
+<style>
+  .series-page {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .page-header {
+    margin-bottom: 3rem;
+  }
+
+  .page-header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+    color: #1e293b;
+  }
+
+  .subtitle {
+    font-size: 1.125rem;
+    color: #64748b;
+  }
+
+  .series-grid {
+    display: grid;
+    gap: 2rem;
+  }
+
+  .series-card {
+    padding: 2rem;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(79, 70, 229, 0.15);
+    background: rgba(255, 255, 255, 0.6);
+    transition: all 0.2s ease;
+  }
+
+  .series-card:hover {
+    border-color: rgba(79, 70, 229, 0.3);
+    box-shadow: 0 8px 20px rgba(79, 70, 229, 0.1);
+    transform: translateY(-2px);
+  }
+
+  .series-card h2 {
+    margin: 0 0 1rem 0;
+    font-size: 1.75rem;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+
+  .series-card h2 a {
+    color: #1e293b;
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+
+  .series-card h2 a:hover {
+    color: #4f46e5;
+  }
+
+  .description {
+    color: #475569;
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+    font-size: 1.0625rem;
+  }
+
+  .series-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #64748b;
+    font-size: 0.9375rem;
+    margin-bottom: 1rem;
+  }
+
+  .part-count {
+    font-weight: 600;
+    color: #4f46e5;
+  }
+
+  .separator {
+    color: #cbd5e1;
+  }
+
+  .tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .tag {
+    font-size: 0.8125rem;
+    color: #4f46e5;
+    background: rgba(99, 102, 241, 0.08);
+    padding: 0.25rem 0.625rem;
+    border-radius: 0.25rem;
+  }
+
+  .empty-state {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: #64748b;
+  }
+
+  @media (max-width: 768px) {
+    .page-header h1 {
+      font-size: 2rem;
+    }
+
+    .series-card {
+      padding: 1.5rem;
+    }
+
+    .series-card h2 {
+      font-size: 1.5rem;
+    }
+  }
+</style>

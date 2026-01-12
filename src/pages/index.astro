@@ -1,9 +1,8 @@
 ---
-// src/pages/index.astro
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 
-// Get all published posts, sorted by date (newest first)
+// Get all published posts
 const allPosts = await getCollection("posts", ({ data }) => {
   return data.draft !== true;
 });
@@ -12,8 +11,49 @@ const sortedPosts = allPosts.sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
 );
 
-// Get recent posts (last 10)
-const recentPosts = sortedPosts.slice(0, 10);
+// Get recent posts (last 5)
+const recentPosts = sortedPosts.slice(0, 5);
+
+// Get series metadata
+const allSeriesMeta = await getCollection("series-meta", ({ data }) => {
+  return data.draft !== true;
+});
+
+// Get all series parts to calculate update dates
+const allSeriesParts = await getCollection("series", ({ data }) => {
+  return data.draft !== true;
+});
+
+// Helper to extract series slug
+function getSeriesSlug(id: string): string {
+  return id.replace(/\.md$/, "").split('/')[0];
+}
+
+// Create series list
+const recentSeries = allSeriesMeta
+  .map((meta) => {
+    const slug = getSeriesSlug(meta.id);
+    const parts = allSeriesParts.filter(part =>
+      getSeriesSlug(part.id) === slug
+    );
+    
+    const lastUpdate = parts.length > 0
+      ? parts.reduce((latest, part) => 
+          part.data.date > latest ? part.data.date : latest, 
+          parts[0].data.date
+        )
+      : new Date();
+    
+    return {
+      slug,
+      title: meta.data.title,
+      description: meta.data.description,
+      partCount: parts.length,
+      lastUpdate,
+    };
+  })
+  .sort((a, b) => b.lastUpdate.valueOf() - a.lastUpdate.valueOf())
+  .slice(0, 3);
 ---
 
 <BaseLayout title="The Fault In My Writings">
@@ -24,6 +64,37 @@ const recentPosts = sortedPosts.slice(0, 10);
         Exploring programming, low-level systems, and the occasional story.
       </p>
     </section>
+
+    {recentSeries.length > 0 && (
+      <section class="recent-series">
+        <div class="section-header">
+          <h2>Recent Series</h2>
+          <a href="/series/" class="view-all">View all →</a>
+        </div>
+
+        <div class="series-grid">
+          {recentSeries.map((series) => {
+            const formattedDate = series.lastUpdate.toLocaleDateString("en-US", {
+              year: "numeric",
+              month: "short",
+            });
+            
+            return (
+              <article class="series-card">
+                <h3>
+                  <a href={`/series/${series.slug}`}>{series.title}</a>
+                </h3>
+                <p class="description">{series.description}</p>
+                <div class="series-footer">
+                  <span class="part-count">{series.partCount} {series.partCount === 1 ? 'part' : 'parts'}</span>
+                  <time>Updated {formattedDate}</time>
+                </div>
+              </article>
+            );
+          })}
+        </div>
+      </section>
+    )}
 
     <section class="recent-posts">
       <div class="section-header">
@@ -41,11 +112,6 @@ const recentPosts = sortedPosts.slice(0, 10);
           
           return (
             <article class="post-card">
-              {post.data.series && (
-                <div class="series-indicator">
-                  Part {post.data.series.part} · {post.data.series.name}
-                </div>
-              )}
               <h3>
                 <a href={`/posts/${post.slug}`}>{post.data.title}</a>
               </h3>
@@ -97,6 +163,10 @@ const recentPosts = sortedPosts.slice(0, 10);
     max-width: 600px;
   }
 
+  .recent-series {
+    margin-bottom: 4rem;
+  }
+
   .section-header {
     display: flex;
     justify-content: space-between;
@@ -122,6 +192,57 @@ const recentPosts = sortedPosts.slice(0, 10);
     color: #312e81;
   }
 
+  .series-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .series-card {
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(79, 70, 229, 0.15);
+    background: rgba(255, 255, 255, 0.6);
+    transition: all 0.2s ease;
+  }
+
+  .series-card:hover {
+    border-color: rgba(79, 70, 229, 0.3);
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.08);
+    transform: translateY(-2px);
+  }
+
+  .series-card h3 {
+    margin: 0 0 0.75rem 0;
+    font-size: 1.375rem;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+
+  .series-card h3 a {
+    color: #1e293b;
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+
+  .series-card h3 a:hover {
+    color: #4f46e5;
+  }
+
+  .series-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.875rem;
+    color: #64748b;
+  }
+
+  .part-count {
+    font-weight: 600;
+    color: #4f46e5;
+  }
+
   .posts-grid {
     display: flex;
     flex-direction: column;
@@ -140,17 +261,6 @@ const recentPosts = sortedPosts.slice(0, 10);
     border-color: rgba(79, 70, 229, 0.25);
     box-shadow: 0 4px 12px rgba(79, 70, 229, 0.08);
     transform: translateY(-2px);
-  }
-
-  .series-indicator {
-    display: inline-block;
-    padding: 0.25rem 0.625rem;
-    margin-bottom: 0.75rem;
-    background: rgba(99, 102, 241, 0.08);
-    color: #4f46e5;
-    border-radius: 0.25rem;
-    font-size: 0.8125rem;
-    font-weight: 500;
   }
 
   .post-card h3 {
@@ -216,11 +326,13 @@ const recentPosts = sortedPosts.slice(0, 10);
       font-size: 1.5rem;
     }
 
-    .post-card {
+    .post-card,
+    .series-card {
       padding: 1.25rem;
     }
 
-    .post-card h3 {
+    .post-card h3,
+    .series-card h3 {
       font-size: 1.125rem;
     }
   }
