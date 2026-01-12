@@ -1,8 +1,7 @@
 ---
 title: 'Hello Astro'
-pubDate: 2026-01-11
+date: '2026-01-11'
 description: 'First time using Astro for my site and I like it.'
-author: 'faultypointer'
 tags: ["writing", "astro"]
 ---
 

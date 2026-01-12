@@ -1,23 +1,80 @@
 ---
-import Social from "./Social.astro"
+import Social from "./Social.astro";
+
+const currentYear = new Date().getFullYear();
 ---
+
+<footer>
+  <div class="footer-content">
+    <div class="footer-info">
+      <p class="copyright">© {currentYear} The Fault In My Writings</p>
+      <p class="tagline">Writing about whatever comes to my mind.</p>
+    </div>
+    <div class="social-links">
+      <Social content="GitHub" url="https://github.com/faultypointer" />
+      <Social content="Hachyderm" url="https://hachyderm.io/@faultypointer" />
+    </div>
+  </div>
+</footer>
 
 <style>
   footer {
-    margin-top: 3rem;
-    padding: 1.5rem 0;
+    margin-top: auto;
+    padding: 2rem 1.5rem;
+    border-top: 1px solid rgba(79, 70, 229, 0.1);
+    background: rgba(248, 250, 252, 0.5);
+  }
 
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
-    gap: 1rem;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    gap: 2rem;
+  }
 
-    border-top: 1px solid rgba(79, 70, 229, 0.15);
+  .footer-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .copyright {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: #1e293b;
+    margin: 0;
+  }
+
+  .tagline {
+    font-size: 0.875rem;
+    color: #64748b;
+    margin: 0;
+  }
+
+  .social-links {
+    display: flex;
+    gap: 0.75rem;
+  }
+
+  @media (max-width: 768px) {
+    footer {
+      padding: 1.5rem 1rem;
+    }
+
+    .footer-content {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.5rem;
+    }
+
+    .copyright {
+      font-size: 0.875rem;
+    }
+
+    .tagline {
+      font-size: 0.8125rem;
+    }
   }
 </style>
-
-
-<footer>
-    <Social content="github" url="https://github.com/faultypointer"/>
-    <Social content="hachyderm" url = "https://hachyderm.io/@faultypointer"/>
-</footer>

@@ -1,96 +1,92 @@
 ---
-import Header from "../components/Header.astro"
-import Footer from "../components/Footer.astro"
-import "../styles/global.css"
-
-const pageTitle = "About Me";
+// src/pages/about.astro
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image" href="/favicon.png" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle}</title>
-	</head>
-	<body>
-        <h1>{pageTitle}</h1>
-        <Header />
-    <main>
-        <section class="about">
+<BaseLayout 
+  title="About Me | The Fault In My Writings"
+  description="Learn more about faulty and their interests in programming, low-level systems, and more."
+>
+  <div class="about-page">
+    <h1>About Me</h1>
+    
+    <section class="about-content">
+      <p>
+        I'm faulty. I like everything programming and a few other things.
+      </p>
+      
+      <p>
+        After messing around with quite a few languages and in quite a few different fields, I feel 
+        like I have finally found my calling. Although, the realization could have come sooner instead 
+        of when I'm about to finish my <b>Bachelor of Computer Engineering</b>. But better late than never right?
+      </p>
+      
+      <p>
+        <b><i>What is that calling you might be asking?</i></b><br>
+        If I were to describe it in a single word, it would be "<b>Low-Level</b>". 
+        I don't exactly know what specifically I mean by "Low-Level", but I'm leaning towards 
+        <b>Operating Systems</b>. I also have interest in <b>RISC-V, programming languages theory and compilers,
+        distributed systems</b>.
+        <br>
+        I do have some interest in AI as well but the FOMO and the fear that it progressed so far ahead are 
+        balancing each other out.
+      </p>
+      
+      <p>
+        In terms of programming languages, the list of the ones I like are even more long but I've choosen
+        Rust and C to be my primary languages of choice.
+      </p>
+      
+      <p>
+        Other than programming, what I like is very limited. I like reading books (mostly fiction).
+        I also like reading mangas and watching animes.
+        Lastly, as you might have guessed from the existence of this blog, I also like writing.
+      </p>
+    </section>
+  </div>
+</BaseLayout>
 
-            <p>
-                I'm faulty. I like everything programming and a few other things.
-            </p>
+<style>
+  .about-page {
+    max-width: 720px;
+    margin: 0 auto;
+  }
 
-            <p>
-                After messing around with quite a few languages and in quite a few different fields, I feel 
-                like I have finally found my calling. Although, the realization could have come sooner instead 
-                of when I'm about to finish my <b>Bachelor of Computer Engineering</b>.But better late than never right?
-            </p>
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    letter-spacing: -0.02em;
+    color: #1e293b;
+  }
 
-            <p>
-                <b><i>What is that calling you might be asking?</i></b><br>
-                If I were to describe it in a single word, it would be "<b>Low-Level</b>". 
-                I don't exactly know what specifically I mean by "Low-Level", but I'm leaning towards 
-                <b>Operating Systems</b>. I also have interest in <b>RISC-V, programming languages theory and compilers,
-                distributed systems</b>.
-                <br>
-                I do have some interest in AI as well but the FOMO and the fear that it progressed so far ahead are 
-                balancing each other out.
-            </p>
+  .about-content {
+    line-height: 1.75;
+    font-size: 1.0625rem;
+    color: #1e293b;
+  }
 
-            <p>
-                In terms of programming languages, the list of the ones I like are even more long but I've choosen
-                Rust and C to be my primary languages of choice.
-            </p>
+  .about-content p {
+    margin-bottom: 1.5rem;
+  }
 
-            <p>
-                Other than programming, what I like is very limited. I like reading books (mostly fiction).
-                I also like reading mangas and watching animes.
-                Lastly, as you might have guessed from the existence of this blog, I also like writing.
-            </p>
-        </section>
+  .about-content b {
+    font-weight: 600;
+    color: #4f46e5;
+  }
 
-    </main>
-    <Footer />
-	</body>
+  .about-content br {
+    display: block;
+    margin-top: 0.75rem;
+  }
 
-    <style>
-        main {
-            padding: 4rem 1.5rem;
-            display: flex;
-            justify-content: center;
-        }
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2rem;
+    }
 
-        /* About section */
-        .about {
-            max-width: 720px;
-            line-height: 1.75;
-            font-size: 1.05rem;
-        }
-
-        .about h1 {
-            font-size: 2.2rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            letter-spacing: -0.02em;
-        }
-
-        .about p {
-            margin-bottom: 1.2rem;
-        }
-
-        .about b {
-            font-weight: 600;
-        }
-
-        /* Optional: soften line breaks inside paragraphs */
-        .about br {
-            display: block;
-            margin-top: 0.75rem;
-        }
-        </style>
-
-</html>
+    .about-content {
+      font-size: 1rem;
+    }
+  }
+</style>

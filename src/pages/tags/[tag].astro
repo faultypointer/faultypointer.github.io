@@ -1,0 +1,224 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const allPosts = await getCollection("posts");
+  const uniqueTags = [...new Set(allPosts.flatMap((post) => post.data.tags || []))];
+
+  return uniqueTags.map((tag) => {
+    const filteredPosts = allPosts.filter((post) =>
+      post.data.tags?.includes(tag)
+    );
+    return {
+      params: { tag },
+      props: { posts: filteredPosts },
+    };
+  });
+}
+
+const { tag } = Astro.params;
+const { posts } = Astro.props;
+
+const sortedPosts = posts.sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+---
+
+<BaseLayout 
+  title={`Posts tagged "${tag}" | The Fault In My Writings`}
+  description={`All posts tagged with ${tag}`}
+>
+  <div class="tag-page">
+    <header class="page-header">
+      <h1>Posts tagged <span class="tag-name">#{tag}</span></h1>
+      <p class="subtitle">{sortedPosts.length} {sortedPosts.length === 1 ? 'post' : 'posts'}</p>
+    </header>
+
+    <div class="posts-list">
+      {sortedPosts.map((post) => {
+        const formattedDate = post.data.date.toLocaleDateString("en-US", {
+          year: "numeric",
+          month: "short",
+          day: "numeric",
+        });
+        
+        return (
+          <article class="post-card">
+            {post.data.series && (
+              <div class="series-indicator">
+                Part {post.data.series.part} · {post.data.series.name}
+              </div>
+            )}
+            <h2>
+              <a href={`/posts/${post.slug}`}>{post.data.title}</a>
+            </h2>
+            <p class="description">{post.data.description}</p>
+            <div class="post-footer">
+              <time datetime={post.data.date.toISOString()}>
+                {formattedDate}
+              </time>
+              {post.data.tags && post.data.tags.length > 1 && (
+                <div class="tags">
+                  {post.data.tags.filter(t => t !== tag).slice(0, 2).map((t) => (
+                    <a href={`/tags/${t}`} class="tag">#{t}</a>
+                  ))}
+                </div>
+              )}
+            </div>
+          </article>
+        );
+      })}
+    </div>
+
+    <div class="back-link">
+      <a href="/posts/">← Back to all posts</a>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .tag-page {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .page-header {
+    margin-bottom: 3rem;
+  }
+
+  .page-header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+    color: #1e293b;
+  }
+
+  .tag-name {
+    color: #4f46e5;
+  }
+
+  .subtitle {
+    font-size: 1.125rem;
+    color: #64748b;
+  }
+
+  .posts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .post-card {
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(79, 70, 229, 0.1);
+    background: rgba(255, 255, 255, 0.5);
+    transition: all 0.2s ease;
+  }
+
+  .post-card:hover {
+    border-color: rgba(79, 70, 229, 0.25);
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.08);
+    transform: translateY(-2px);
+  }
+
+  .series-indicator {
+    display: inline-block;
+    padding: 0.25rem 0.625rem;
+    margin-bottom: 0.75rem;
+    background: rgba(99, 102, 241, 0.08);
+    color: #4f46e5;
+    border-radius: 0.25rem;
+    font-size: 0.8125rem;
+    font-weight: 500;
+  }
+
+  .post-card h2 {
+    margin: 0 0 0.75rem 0;
+    font-size: 1.375rem;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+
+  .post-card h2 a {
+    color: #1e293b;
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+
+  .post-card h2 a:hover {
+    color: #4f46e5;
+  }
+
+  .description {
+    color: #475569;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  .post-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .post-footer time {
+    color: #64748b;
+    font-size: 0.875rem;
+  }
+
+  .tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .tag {
+    font-size: 0.8125rem;
+    color: #4f46e5;
+    background: rgba(99, 102, 241, 0.06);
+    padding: 0.125rem 0.5rem;
+    border-radius: 0.25rem;
+    text-decoration: none;
+    transition: background-color 0.15s ease;
+  }
+
+  .tag:hover {
+    background: rgba(99, 102, 241, 0.12);
+  }
+
+  .back-link {
+    padding-top: 2rem;
+    border-top: 1px solid rgba(79, 70, 229, 0.1);
+  }
+
+  .back-link a {
+    color: #4f46e5;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.15s ease;
+  }
+
+  .back-link a:hover {
+    color: #312e81;
+  }
+
+  @media (max-width: 768px) {
+    .page-header h1 {
+      font-size: 2rem;
+    }
+
+    .post-card {
+      padding: 1.25rem;
+    }
+
+    .post-card h2 {
+      font-size: 1.125rem;
+    }
+  }
+</style>

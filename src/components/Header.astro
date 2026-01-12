@@ -1,8 +1,63 @@
 ---
+// src/components/Header.astro
 import Navigation from './Navigation.astro';
+
+const currentPath = Astro.url.pathname;
 ---
+
 <header>
-  <nav>
+  <div class="container">
+    <div class="logo">
+      <a href="/">
+        <span class="logo-text">The Fault In My Writings</span>
+      </a>
+    </div>
     <Navigation />
-  </nav>
+  </div>
 </header>
+
+<style>
+  header {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(79, 70, 229, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo a {
+    text-decoration: none;
+    color: #1e293b;
+    font-weight: 600;
+    font-size: 1.125rem;
+    transition: color 0.15s ease;
+  }
+
+  .logo a:hover {
+    color: #4f46e5;
+  }
+
+  .logo-text {
+    letter-spacing: -0.01em;
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      padding: 0.875rem 1rem;
+    }
+
+    .logo-text {
+      font-size: 1rem;
+    }
+  }
+</style>
