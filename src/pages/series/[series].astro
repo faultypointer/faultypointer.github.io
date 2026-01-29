@@ -17,10 +17,9 @@ const { meta } = Astro.props;
 const seriesSlug = meta.id.replace(/\.md$/, "");
 // Get all parts for this series
 const allParts = await getCollection("series");
-console.log("ALL SERIES PART IDS:", allParts.map(p => p.id));
-console.log("SeriesSlug: ", seriesSlug);
 const seriesParts = allParts
   .filter(part => part.id.startsWith(`${seriesSlug}/`))
+  .filter(part => !part.data.draft)
   .sort((a, b) => a.data.part - b.data.part);
 
 const lastUpdate = seriesParts.length > 0

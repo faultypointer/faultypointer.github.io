@@ -30,6 +30,7 @@ const seriesMeta = await getEntry('series-meta', `${seriesSlug}/_meta`);
 const allParts = await getCollection("series");
 const seriesParts = allParts
   .filter(p => p.id.startsWith(`${seriesSlug}/`))
+  .filter(part => !part.data.draft)
   .sort((a, b) => a.data.part - b.data.part);
 
 // Find previous and next parts
