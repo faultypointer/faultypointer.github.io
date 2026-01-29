@@ -34,7 +34,7 @@ const {
 // Helper to get part slug from id
 function getPartSlug(id: string): string {
   const fileName = id.split('/')[1];
-  return fileName.replace(/\.md$/, '');
+  return fileName.replace(/\.(md|mdx)$/, '');
 }
 
 // Calculate reading time
@@ -131,10 +131,19 @@ const formattedDate = date.toLocaleDateString("en-US", {
   </article>
 </BaseLayout>
 
+
 <style>
   .series-post {
     max-width: 720px;
     margin: 0 auto;
+    padding-right: 0;
+  }
+
+  @media (min-width: 1280px) {
+    .series-post {
+      max-width: 900px;
+      padding-right: 280px;
+    }
   }
 
   .post-header {
@@ -228,6 +237,8 @@ const formattedDate = date.toLocaleDateString("en-US", {
     line-height: 1.75;
     color: #1e293b;
     margin-bottom: 3rem;
+    counter-reset: sidenote-counter;
+    position: relative;
   }
 
   .post-content :global(h2) {

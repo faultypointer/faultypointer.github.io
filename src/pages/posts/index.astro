@@ -67,11 +67,6 @@ const allTags = [...new Set(sortedPosts.flatMap(post => post.data.tags || []))].
                     {formattedDate}
                   </time>
                   <div class="post-info">
-                    {post.data.series && (
-                      <span class="series-badge">
-                        Part {post.data.series.part}
-                      </span>
-                    )}
                     <h3>
                       <a href={`/posts/${post.slug}`}>{post.data.title}</a>
                     </h3>

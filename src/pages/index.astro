@@ -26,7 +26,7 @@ const allSeriesParts = await getCollection("series", ({ data }) => {
 
 // Helper to extract series slug
 function getSeriesSlug(id: string): string {
-  return id.replace(/\.md$/, "").split('/')[0];
+  return id.replace(/\.(md|mdx)$/, "").split('/')[0];
 }
 
 // Create series list

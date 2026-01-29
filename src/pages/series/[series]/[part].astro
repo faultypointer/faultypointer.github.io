@@ -8,7 +8,7 @@ export async function getStaticPaths() {
   
   return allParts.map((part) => {
     const [seriesSlug, fileName] = part.id.split('/');
-    const partSlug = fileName.replace(/\.md$/, '');
+    const partSlug = fileName.replace(/\.(md|mdx)$/, '');
     
     return {
       params: { 

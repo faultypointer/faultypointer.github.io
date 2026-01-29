@@ -6,7 +6,7 @@ export async function getStaticPaths() {
   const allSeriesMeta = await getCollection("series-meta");
   
   return allSeriesMeta.map((meta) => {
-      const seriesSlug = meta.id.replace(/\.md$/, "");    return {
+      const seriesSlug = meta.id.replace(/\.(md|mdx)$/, "");    return {
       params: { series: seriesSlug },
       props: { meta },
     };
@@ -14,7 +14,7 @@ export async function getStaticPaths() {
 }
 
 const { meta } = Astro.props;
-const seriesSlug = meta.id.replace(/\.md$/, "");
+const seriesSlug = meta.id.replace(/\.(md|mdx)$/, "");
 // Get all parts for this series
 const allParts = await getCollection("series");
 const seriesParts = allParts
@@ -78,7 +78,7 @@ const { Content } = await meta.render();
       <h2>All Parts</h2>
       <ol class="parts">
         {seriesParts.map((part) => {
-          const partSlug = part.id.split('/')[1].replace(/\.md$/, '');
+          const partSlug = part.id.split('/')[1].replace(/\.(md|mdx)$/, '');
           const formattedDate = part.data.date.toLocaleDateString("en-US", {
             year: "numeric",
             month: "short",

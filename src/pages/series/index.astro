@@ -15,7 +15,7 @@ const allSeriesParts = await getCollection("series", ({ data }) => {
 
 // Helper to extract series slug from entry id (e.g., "learning-riscv-assembly/_meta" -> "learning-riscv-assembly")
 function getSeriesSlug(id: string): string {
-  return id.replace(/\.md$/, "");;
+  return id.replace(/\.(md|mdx)$/, "").split('/')[0];
 }
 
 // Create series list with metadata
