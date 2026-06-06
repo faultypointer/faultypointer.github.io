@@ -1,4 +1,4 @@
-import { useRef } from "react";
+// import { useRef } from "react";
 import { motion } from "framer-motion";
 import { useWindowStore } from "../../store/windowStore";
 import type { AppWindow } from "../../types/window";
@@ -11,7 +11,7 @@ interface WindowShellProps {
 
 export default function WindowShell({window, children}: WindowShellProps) {
     const { closeWindow, minimizeWindow, maximizeWindow, focusWindow, updatePosition } = useWindowStore();
-    const constraintsRef = useRef(null);
+    // const constraintsRef = useRef(null);
 
     const maximizedStyle = {
         x: 0,

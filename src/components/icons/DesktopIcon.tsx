@@ -1,4 +1,4 @@
-import { Files, Folder, Icon, User, type LucideIcon } from "lucide-react";
+import { Files, Folder, User, type LucideIcon } from "lucide-react";
 import { useState } from "react";
 
 const iconMap: Record<string, LucideIcon> = {
