@@ -5,7 +5,7 @@ import profileImage  from "../../assets/profile/profile.jpg";
 export default function AboutMeApp() {
     return (
         <div className="h-full overflow-y-auto bg-gray-900 text-white">
-            <div className="p-8 max-w-lg mx-auto">
+            <div className="p-2 max-w-lg mx-0">
                 <div className="flex items-center gap-4 mb-6">
                     <div className="w-20 h-20 rounded-full bg-blue-500 flex items-center justify-center text-3xl font-bold">
                         <img
