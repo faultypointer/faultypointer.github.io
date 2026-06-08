@@ -1,11 +1,7 @@
-import { Files, Folder, User, type LucideIcon } from "lucide-react";
+import { Folder, } from "lucide-react";
 import { useState } from "react";
+import { iconMap } from "../../lib/utils";
 
-const iconMap: Record<string, LucideIcon> = {
-    Folder,
-    Files,
-    User,
-}
 
 interface DesktopIconProps {
     label: string
