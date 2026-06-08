@@ -5,7 +5,7 @@ interface WindowStore {
     windows: AppWindow[]
     nextZIndex: number
 
-    openWindow: (appId: string, title: string) => void
+    openWindow: (appId: string, title: string, size?: {width: number, height: number}) => void
     closeWindow: (id: string) => void
     minimizeWindow: (id: string) => void
     restoreWindow: (id: string) => void
@@ -19,7 +19,7 @@ export const useWindowStore = create<WindowStore>((set, get) => ({
     windows: [],
     nextZIndex: 10,
 
-    openWindow: (appId, title) => {
+    openWindow: (appId, title, size) => {
         const { nextZIndex } = get()
         const offset = get().windows.length * 30
 
@@ -28,7 +28,7 @@ export const useWindowStore = create<WindowStore>((set, get) => ({
             appId,
             title,
             position: {x: 100 + offset, y: 80 + offset},
-            size: {width: 700, height: 500},
+            size:  size ?? {width: 700, height: 500},
             isMinimized: false,
             isMaximized: false,
             zIndex: nextZIndex,

@@ -17,7 +17,7 @@ export const appRegistry: AppDefinition[] = [
         title: 'Documents',
         icon: 'Files',
         component: DocumentsApp,
-        defaultSize: { width: 740, height: 520 },
+        defaultSize: { width: 920, height: 520 },
     },
 
     {

@@ -4,12 +4,24 @@ import { useWindowStore } from "../../store/windowStore";
 import DesktopIcon from "../icons/DesktopIcon";
 import WindowShell from "../windows/WindowShell";
 import Taskbar from "./Taskbar";
+import { projectRegistry } from "../../data/projectRegistry";
 
 export default function Desktop() {
     const { windows, openWindow } = useWindowStore()
 
-    const handleOpenApp = (appId: string, title: string) => {
-        openWindow(appId, title)
+    const handleOpenApp = (appId: string, title: string, size: {width: number, height: number}) => {
+        openWindow(appId, title, size)
+    }
+
+    const resolveComponent = (appId: string): React.ComponentType | null => {
+        if (appId.startsWith('project:')) {
+            const projectId = appId.replace('project:', '')
+            const project = projectRegistry.find(p => p.id === projectId)
+            return project?.component ?? null
+        }
+
+        const app = getApp(appId)
+        return app?.component ?? null
     }
 
     return (
@@ -22,16 +34,15 @@ export default function Desktop() {
                         key={app.id}
                         label={app.title}
                         iconName={app.icon}
-                        onDoubleClick={() => handleOpenApp(app.id, app.title)}
+                        onDoubleClick={() => handleOpenApp(app.id, app.title, app.defaultSize)}
                     />
                 ))}
             </div>
 
             <AnimatePresence>
                 {windows.map(win => {
-                    const app = getApp(win.appId)
-                    if (!app) return null
-                    const AppComponent = app.component
+                    const AppComponent = resolveComponent(win.appId)
+                    if (!AppComponent) return null
 
                     return (
                         <WindowShell key={win.id} window={win}>
