@@ -14,13 +14,13 @@ export interface Document {
 export const documents: Document[] = [
     {
         id: 'edu-1',
-        name: "Bachelors in Computer Engineering.txt",
+        name: "Bachelors in Computer Engineering",
         type: 'education',
         content: {
             title: "Bachelor's in Computer Engineering",
             subtitle: "Tribhuvan University, IOE, Purwanchal Campus",
             period: "2022- 2026",
-            description: "TODO",
+            description: "",
             details: [
                 'Relevant CourseWork: Data Structures and Algorithms, DBMS, Computer Networks',
                 'Minor Project: A Federated Social Media For Scientific Communication',
