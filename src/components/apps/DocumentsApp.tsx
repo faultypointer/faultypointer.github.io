@@ -57,7 +57,7 @@ export default function DocumentsApp() {
             `}
           >
             <FileText size={14} className="shrink-0 text-gray-400" />
-            <span className="truncate">{doc.name}</span>
+            <span className="wrap-break-word">{doc.name}</span>
           </button>
         ))}
       </div>
