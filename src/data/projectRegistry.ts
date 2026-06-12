@@ -2,6 +2,7 @@ import type { ComponentType } from "react"
 import PortfoliOS from "../components/apps/projects/PortfoliOS"
 import PiSocial from "../components/apps/projects/3o14"
 import OverlayFS from "../components/apps/projects/OverlayFS"
+import Predict2026 from "../components/apps/projects/Predict2026"
 
 export interface ProjectEntry {
     id: string
@@ -38,5 +39,14 @@ export const projectRegistry: ProjectEntry[] = [
         year: '2026',
         component: OverlayFS,
         defaultSize: {width: 720, height: 640},
+    },
+
+    {
+        id: 'predict2026',
+        name: 'Predict2026',
+        description: 'WorldCup 2026 prediction app',
+        year: '2026',
+        component: Predict2026,
+        defaultSize: {width: 720, height: 540},
     }
 ]
