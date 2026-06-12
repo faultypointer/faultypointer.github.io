@@ -97,7 +97,7 @@ export default function Predict2026() {
                         <span className="text-[10px] text-[#2d5a2d]">48 teams · 104 matches · fully predictable</span>
                     </div>
                     <a
-                        href="https://github.com/faultypointer"
+                        href="https://github.com/faultypointer/predict2026/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center gap-1.5 px-3 py-1.5 bg-[#0a1410] border border-[#1e3a1e] rounded-md text-[11px] text-[#4ade80] no-underline hover:bg-[#0d1f0d] transition-colors"
